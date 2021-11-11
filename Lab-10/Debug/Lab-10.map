@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.5                   
 ******************************************************************************
->> Linked Thu Nov 11 02:34:15 2021
+>> Linked Thu Nov 11 03:17:48 2021
 
 OUTPUT FILE NAME:   <Lab-10.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000026d
@@ -67,7 +67,7 @@ MODULE SUMMARY
     +--+------------------------------+------+---------+---------+
        Total:                         16     620       0      
                                                               
-    /Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
+    /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib/rtsv7M4_T_le_v4SPD16_eabi.lib
        boot_cortex_m.c.obj            44     0         0      
        exit.c.obj                     4      0         0      
        pre_init.c.obj                 4      0         0      
