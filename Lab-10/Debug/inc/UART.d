@@ -13,8 +13,8 @@ inc/UART.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/
 inc/UART.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
 inc/UART.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdio.h
 inc/UART.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
-inc/UART.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART.h
-inc/UART.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h
+inc/UART.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART.h
+inc/UART.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h
 inc/UART.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/file.h
 
 ../inc/UART.c:
@@ -43,9 +43,9 @@ inc/UART.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/
 
 /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h:
 
 /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/file.h:
 

@@ -10,14 +10,16 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./Controller.obj" \
 "./DisplayDriver.obj" \
+"./ESPDriver.obj" \
 "./MotorDriver.obj" \
+"./SwitchDriver.obj" \
 "./TachDriver.obj" \
 "./main.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
 "./inc/CortexM.obj" \
 "./inc/PWM.obj" \
-"./inc/UART.obj" \
-"./inc/esp8266.obj" \
+"./inc/UARTLab4.obj" \
+"./inc/esp8266Lab4.obj" \
 "../tm4c123gh6pm.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -163,8 +165,8 @@ Lab-10.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Controller.obj" "DisplayDriver.obj" "MotorDriver.obj" "TachDriver.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" "inc/CortexM.obj" "inc/PWM.obj" "inc/UART.obj" "inc/esp8266.obj" 
-	-$(RM) "Controller.d" "DisplayDriver.d" "MotorDriver.d" "TachDriver.d" "main.d" "tm4c123gh6pm_startup_ccs.d" "inc/CortexM.d" "inc/PWM.d" "inc/UART.d" "inc/esp8266.d" 
+	-$(RM) "Controller.obj" "DisplayDriver.obj" "ESPDriver.obj" "MotorDriver.obj" "SwitchDriver.obj" "TachDriver.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" "inc/CortexM.obj" "inc/PWM.obj" "inc/UARTLab4.obj" "inc/esp8266Lab4.obj" 
+	-$(RM) "Controller.d" "DisplayDriver.d" "ESPDriver.d" "MotorDriver.d" "SwitchDriver.d" "TachDriver.d" "main.d" "tm4c123gh6pm_startup_ccs.d" "inc/CortexM.d" "inc/PWM.d" "inc/UARTLab4.d" "inc/esp8266Lab4.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

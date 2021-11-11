@@ -13,16 +13,16 @@
 
 //Init ESP Chip
 // Connect to Wifi
-void InitController();
+void InitController(void);
 
 //Connect to Blynk
-void ConnectToServer();
+void ConnectToServer(void);
 
 //Get Inputs to set PWM
-void RecieveData();
+void RecieveData(void);
 
 //Send values to be displayed
-void SendData();
+void SendData(void);
 
 
 

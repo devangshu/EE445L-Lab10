@@ -8,11 +8,13 @@
 #ifndef DISPLAYDRIVER_H_
 #define DISPLAYDRIVER_H_
 
+#include "ST7735.h"
+
 //This will just call ST7735_Init()
-void DisplayInit();
+void DisplayInit(void);
 
 //Display graph
-void PlotCustomGraph();
+void PlotCustomGraph(void);
 
 
 

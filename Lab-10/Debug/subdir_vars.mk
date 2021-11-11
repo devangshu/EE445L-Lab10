@@ -9,7 +9,9 @@ CMD_SRCS += \
 C_SRCS += \
 ../Controller.c \
 ../DisplayDriver.c \
+../ESPDriver.c \
 ../MotorDriver.c \
+../SwitchDriver.c \
 ../TachDriver.c \
 ../main.c \
 ../tm4c123gh6pm_startup_ccs.c 
@@ -17,7 +19,9 @@ C_SRCS += \
 C_DEPS += \
 ./Controller.d \
 ./DisplayDriver.d \
+./ESPDriver.d \
 ./MotorDriver.d \
+./SwitchDriver.d \
 ./TachDriver.d \
 ./main.d \
 ./tm4c123gh6pm_startup_ccs.d 
@@ -25,7 +29,9 @@ C_DEPS += \
 OBJS += \
 ./Controller.obj \
 ./DisplayDriver.obj \
+./ESPDriver.obj \
 ./MotorDriver.obj \
+./SwitchDriver.obj \
 ./TachDriver.obj \
 ./main.obj \
 ./tm4c123gh6pm_startup_ccs.obj 
@@ -33,7 +39,9 @@ OBJS += \
 OBJS__QUOTED += \
 "Controller.obj" \
 "DisplayDriver.obj" \
+"ESPDriver.obj" \
 "MotorDriver.obj" \
+"SwitchDriver.obj" \
 "TachDriver.obj" \
 "main.obj" \
 "tm4c123gh6pm_startup_ccs.obj" 
@@ -41,7 +49,9 @@ OBJS__QUOTED += \
 C_DEPS__QUOTED += \
 "Controller.d" \
 "DisplayDriver.d" \
+"ESPDriver.d" \
 "MotorDriver.d" \
+"SwitchDriver.d" \
 "TachDriver.d" \
 "main.d" \
 "tm4c123gh6pm_startup_ccs.d" 
@@ -49,7 +59,9 @@ C_DEPS__QUOTED += \
 C_SRCS__QUOTED += \
 "../Controller.c" \
 "../DisplayDriver.c" \
+"../ESPDriver.c" \
 "../MotorDriver.c" \
+"../SwitchDriver.c" \
 "../TachDriver.c" \
 "../main.c" \
 "../tm4c123gh6pm_startup_ccs.c" 
