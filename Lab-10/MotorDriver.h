@@ -10,15 +10,15 @@
 
 #include <stdio.h>
 
-void InitMotor();
+void InitMotor(void);
 
 void InitMotorTimer(long period );
 
-void MotorTimerHandler();
+void MotorTimerHandler(void);
 
-void CalculatePWM();
+void CalculatePWM(void);
 
-void SetPWM();
+void SetPWM(void);
 
 
 

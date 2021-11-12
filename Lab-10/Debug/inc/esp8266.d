@@ -17,13 +17,13 @@ inc/esp8266.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.L
 inc/esp8266.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
 inc/esp8266.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
 inc/esp8266.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/CortexM.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/FIFO.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART0int.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/esp8266.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/WifiSettings.h
-inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART1.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/FIFO.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART0int.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/esp8266.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/WifiSettings.h
+inc/esp8266.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART1.h
 
 ../inc/esp8266.c:
 
@@ -59,17 +59,17 @@ inc/esp8266.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10
 
 /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/CortexM.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/FIFO.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/FIFO.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART0int.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART0int.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/esp8266.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/esp8266.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/WifiSettings.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/WifiSettings.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART1.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART1.h:
 
