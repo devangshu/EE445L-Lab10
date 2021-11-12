@@ -1348,10 +1348,12 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <part name="R7" library="EE445L" deviceset="RESISTOR" device="0204/5"/>
 <part name="R8" library="EE445L" deviceset="RESISTOR" device="0204/5"/>
 <part name="C2" library="EE445L" deviceset="CAPACITOR" device="025-024X044"/>
+<part name="+3V2" library="EE445L" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="124.46" y="111.76" size="1.778" layer="91">Should be an RC Filter</text>
 </plain>
 <instances>
 <instance part="Q1" gate="G$1" x="157.48" y="111.76" smashed="yes">
@@ -1447,6 +1449,9 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <attribute name="NAME" x="206.375" y="141.224" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="201.549" y="141.224" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="+3V2" gate="G$1" x="205.74" y="154.94" smashed="yes">
+<attribute name="VALUE" x="203.2" y="149.86" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1526,6 +1531,19 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <label x="193.04" y="124.46" size="1.778" layer="95"/>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="P" pin="-VS"/>
+<wire x1="198.12" y1="162.56" x2="198.12" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="198.12" y1="152.4" x2="198.12" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="142.24" x2="200.66" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="152.4" x2="162.56" y2="152.4" width="0.1524" layer="91"/>
+<junction x="198.12" y="152.4"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="162.56" y1="152.4" x2="162.56" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+<wire x1="198.12" y1="152.4" x2="205.74" y2="152.4" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="M0_PWM0" class="0">
 <segment>
@@ -1601,19 +1619,6 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <pinref part="IC1" gate="P" pin="IN-"/>
 <wire x1="190.5" y1="165.1" x2="180.34" y2="165.1" width="0.1524" layer="91"/>
 <label x="177.8" y="162.56" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="IC1" gate="P" pin="-VS"/>
-<wire x1="198.12" y1="162.56" x2="198.12" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="198.12" y1="152.4" x2="198.12" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="142.24" x2="200.66" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="152.4" x2="162.56" y2="152.4" width="0.1524" layer="91"/>
-<junction x="198.12" y="152.4"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="162.56" y1="152.4" x2="162.56" y2="154.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
