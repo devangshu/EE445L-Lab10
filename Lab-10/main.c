@@ -7,13 +7,14 @@ int main(void) {
     DisableInterrupts();
 
     PF2 = 0;
-    //Display_Init();
+    DisplayInit();
     //Audio_Init();
     //Timer_Init();
     //Switches_Init();
     InitTachDriver();
     InitMotor(40000, 600);
     ESP_Init();
+
     EnableInterrupts();
 
     while(1) {

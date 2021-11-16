@@ -17,25 +17,26 @@ main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/incl
 main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/limits.h
 main.obj: ../inc/ADCSWTrigger.h
 main.obj: ../inc/tm4c123gh6pm.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/LaunchPad.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Unified_Port_Init.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/LaunchPad.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Unified_Port_Init.h
 main.obj: ../inc/CortexM.h
 main.obj: ../inc/PLL.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/ST7735.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/ST7735.h
 main.obj: ../SwitchDriver.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/CortexM.h
 main.obj: ../ESPDriver.h
 main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdlib.h
 main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/string.h
 main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/ADCSWTrigger.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UARTLab4.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/esp8266Lab4.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Timer2.h
-main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Timer3.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/ADCSWTrigger.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/UARTLab4.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/esp8266Lab4.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Timer2.h
+main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Timer3.h
 main.obj: ../MotorDriver.h
 main.obj: ../inc/Timer1A.h
 main.obj: ../TachDriver.h
+main.obj: ../DisplayDriver.h
 
 ../main.c:
 
@@ -71,19 +72,19 @@ main.obj: ../TachDriver.h
 
 ../inc/tm4c123gh6pm.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/LaunchPad.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/LaunchPad.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Unified_Port_Init.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Unified_Port_Init.h:
 
 ../inc/CortexM.h:
 
 ../inc/PLL.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/ST7735.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/ST7735.h:
 
 ../SwitchDriver.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/CortexM.h:
 
 ../ESPDriver.h:
 
@@ -93,19 +94,21 @@ main.obj: ../TachDriver.h
 
 /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/xlocale/_string.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/ADCSWTrigger.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/ADCSWTrigger.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UARTLab4.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/UARTLab4.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/esp8266Lab4.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/esp8266Lab4.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Timer2.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Timer2.h:
 
-/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Timer3.h:
+/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Timer3.h:
 
 ../MotorDriver.h:
 
 ../inc/Timer1A.h:
 
 ../TachDriver.h:
+
+../DisplayDriver.h:
 

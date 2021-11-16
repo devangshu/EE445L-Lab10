@@ -9,6 +9,8 @@
 #define DISPLAYDRIVER_H_
 
 #include "ST7735.h"
+#include "MotorDriver.h"
+#include "TachDriver.h"
 
 //This will just call ST7735_Init()
 void DisplayInit(void);

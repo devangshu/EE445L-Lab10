@@ -29,6 +29,6 @@
 #include "ESPDriver.h"
 #include "MotorDriver.h"
 #include "TachDriver.h"
-
+#include "DisplayDriver.h"
 
 #endif /* MAIN_H_ */

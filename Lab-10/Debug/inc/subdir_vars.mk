@@ -9,6 +9,7 @@ C_SRCS += \
 ../inc/LaunchPad.c \
 ../inc/PLL.c \
 ../inc/PWM.c \
+../inc/ST7735.c \
 ../inc/Timer1A.c \
 ../inc/Timer2.c \
 ../inc/Timer3.c \
@@ -22,6 +23,7 @@ C_DEPS += \
 ./inc/LaunchPad.d \
 ./inc/PLL.d \
 ./inc/PWM.d \
+./inc/ST7735.d \
 ./inc/Timer1A.d \
 ./inc/Timer2.d \
 ./inc/Timer3.d \
@@ -35,6 +37,7 @@ OBJS += \
 ./inc/LaunchPad.obj \
 ./inc/PLL.obj \
 ./inc/PWM.obj \
+./inc/ST7735.obj \
 ./inc/Timer1A.obj \
 ./inc/Timer2.obj \
 ./inc/Timer3.obj \
@@ -48,6 +51,7 @@ OBJS__QUOTED += \
 "inc/LaunchPad.obj" \
 "inc/PLL.obj" \
 "inc/PWM.obj" \
+"inc/ST7735.obj" \
 "inc/Timer1A.obj" \
 "inc/Timer2.obj" \
 "inc/Timer3.obj" \
@@ -61,6 +65,7 @@ C_DEPS__QUOTED += \
 "inc/LaunchPad.d" \
 "inc/PLL.d" \
 "inc/PWM.d" \
+"inc/ST7735.d" \
 "inc/Timer1A.d" \
 "inc/Timer2.d" \
 "inc/Timer3.d" \
@@ -74,6 +79,7 @@ C_SRCS__QUOTED += \
 "../inc/LaunchPad.c" \
 "../inc/PLL.c" \
 "../inc/PWM.c" \
+"../inc/ST7735.c" \
 "../inc/Timer1A.c" \
 "../inc/Timer2.c" \
 "../inc/Timer3.c" \
