@@ -39,6 +39,8 @@ char Pin_Float[8]    = "0.0000";   //
 uint32_t pin_num; 
 uint32_t pin_int;
 
+extern uint32_t KP_1, KP_2, KI_1, KI_2, u, e, rps, MotorSpeed;
+
 
 /* module internal functions */
 
@@ -145,22 +147,30 @@ void Blynk_to_TM4C_READ(void){
     UART_OutString("\n\r");
 #endif
   }  
+  if(pin_num == 0x08){
+      //Desired Motor Speed
+      MotorSpeed = pin_int; // need to do math to turn value from 0 - 1 into range of values
+  } else if(pin_num == 0x0A){
+      //KP_1
+      KP_1 = pin_int;
+  } else if(pin_num == 0x0C){
+      //KP_2
+      KP_2 = pin_int;
+  } else if(pin_num == 0x0E){
+      //KI_1
+      KI_1 = pin_int;
+  } else if(pin_num == 0x02){
+      //KI_2
+      KI_2 = pin_int;
+  }
+
 }
 
 void Send_Information(void){
-  uint32_t new_vp74val;
-  new_vp74val = ADC0_InSeq3();
-// your account will be temporarily halted if you send too much data
-  if(new_vp74val != vp74val){
-    TM4C_to_Blynk(74, new_vp74val);  // VP74
-#ifdef DEBUG3
-    Output_Color(ST7735_WHITE);
-    ST7735_OutString("Send 74 data=");
-    ST7735_OutUDec(thisF);
-    ST7735_OutChar('\n');
-#endif
-  }
-  vp74val = new_vp74val;
+  //Send the 3 things to our Blynk console
+  TM4C_to_Blynk(70, rps);
+  TM4C_to_Blynk(71, u);
+  TM4C_to_Blynk(72, e);
 }
 
 
@@ -175,9 +185,6 @@ void ESP_Init(void) {
   ESP8266_Init();       // Enable ESP8266 Serial Port
   ESP8266_Reset();      // Reset the WiFi module
   ESP8266_SetupWiFi();  // Setup communications to Blynk Server  
-	
-	//ADC0_InitSWTriggerSeq3_Ch9();
-	ADC0_InitSWTriggerSeq3(0);
   
 
     //TODO: fix this

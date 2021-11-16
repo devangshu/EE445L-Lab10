@@ -1,6 +1,22 @@
 #include "MotorDriver.h"
 
 
+uint32_t KP_1;
+uint32_t KP_2;
+
+uint32_t KI_1;
+uint32_t KI_2;
+
+//Duty Cycle Control Value
+uint32_t u;
+
+//PI error value
+uint32_t e;
+
+uint32_t rps;
+uint32_t MotorSpeed;
+
+
 // period is 16-bit number of PWM clock cycles in one period (3<=period)
 // period for PB6 and PB7 must be the same
 // duty is number of PWM clock cycles output is high  (2<=duty<=period-1)
@@ -29,9 +45,51 @@ void InitMotor(uint16_t period, uint16_t duty){
   PWM0_0_CMPB_R = duty - 1;             // 6) count value when output rises
   PWM0_0_CTL_R |= 0x00000001;           // 7) start PWM0
   PWM0_ENABLE_R |= 0x00000002;          // enable PB7/M0PWM1
+
+  //Need to init basic values for our PI Equation
+
 }
 // change duty cycle of PB7
 // duty is number of PWM clock cycles output is high  (2<=duty<=period-1)
 void SetDuty(uint16_t duty){
   PWM0_0_CMPB_R = duty - 1;             // 6) count value when output rises
+}
+
+void ChangeDuty(void){
+    PWM0_0_CMPB_R = PI_Equation() - 1;
+}
+
+uint16_t PI_Equation(void){
+    uint32_t P;
+    uint32_t I = 0;
+
+    MotorSpeed = rps/40;          // Set the Motor Speed
+
+    P  =  (KP_1 * e)/KP_2;          // Proportional term
+
+    if(P <  300) P = 300;         // Minimum PWM output = 300
+    if(P >39900) P = 39900;       // Maximum PWM output = 39900
+
+    I  = I + (KI_1 * e)/KI_2;       // SUM(KiDt)
+
+    if(I <  300) {
+        I = 300;         // Minimum PWM output = 300
+    }
+    if(I >39900){
+        I = 39900;       // Maximum PWM output = 39900
+    }
+
+    u   = P + I;                  // Calculate the actuator value
+
+    if(u < 300) {
+        u=300;           // Minimum PWM output
+    }
+    if(u >39900){
+        u=39900;         // 3000 to 39900
+    }
+
+    //SetDuty(U);                    //Send to PWM
+    //PWM0A_Duty(U);                // Send to PWM
+
+    return u;
 }
