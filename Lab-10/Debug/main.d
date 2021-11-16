@@ -17,14 +17,17 @@ main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/incl
 main.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/limits.h
 main.obj: ../inc/ADCSWTrigger.h
 main.obj: ../inc/tm4c123gh6pm.h
+main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/LaunchPad.h
+main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Unified_Port_Init.h
 main.obj: ../inc/CortexM.h
 main.obj: ../inc/PLL.h
-main.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/ST7735.h
-main.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART0int.h
+main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/ST7735.h
+main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART0int.h
 main.obj: ../SwitchDriver.h
-main.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/CortexM.h
+main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h
 main.obj: ../ESPDriver.h
 main.obj: ../MotorDriver.h
+main.obj: ../TachDriver.h
 
 ../main.c:
 
@@ -60,19 +63,25 @@ main.obj: ../MotorDriver.h
 
 ../inc/tm4c123gh6pm.h:
 
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/LaunchPad.h:
+
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/Unified_Port_Init.h:
+
 ../inc/CortexM.h:
 
 ../inc/PLL.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/ST7735.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/ST7735.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UART0int.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/UART0int.h:
 
 ../SwitchDriver.h:
 
-/Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/CortexM.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h:
 
 ../ESPDriver.h:
 
 ../MotorDriver.h:
+
+../TachDriver.h:
 

@@ -14,7 +14,7 @@
 #include "inc/ADCSWTrigger.h"
 #include "inc/tm4c123gh6pm.h"
 //#include "../inc/SysTick.h"
-//#include "../inc/LaunchPad.h"
+#include "../inc/LaunchPad.h"
 #include "inc/CortexM.h"
 //#include "../inc/TExaS.h"
 
@@ -28,6 +28,7 @@
 #include "SwitchDriver.h"
 #include "ESPDriver.h"
 #include "MotorDriver.h"
+#include "TachDriver.h"
 
 
 #endif /* MAIN_H_ */

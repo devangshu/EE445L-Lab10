@@ -8,14 +8,19 @@
 #ifndef TACHDRIVER_H_
 #define TACHDRIVER_H_
 
-#include <stdio.h>
 
-void InitTachDriver();
+#include <stdint.h>
+#include <stdio.h>
+#include "tm4c123gh6pm.h"
+
+void PeriodMeasure_Init(void);
+
+void InitTachDriver(void);
 
 //1.    Calculate error as the difference between actual and desired speed
-void CalcError();
+void CalcError(void);
 
-void ReadSpeed();
+void ReadSpeed(void);
 
 
 
