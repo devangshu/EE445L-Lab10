@@ -31,7 +31,7 @@
 char    ssid[32]        = "21 Resident";
 char    pass[32]        = "Hookem*2101";
 // create your own Blynk server app and edit this next line with your authentication code
-char    auth[64]        = "5otMeyvBI2bkrGEEhy-WA2itcELTgSKG";
+char    auth[64]        = "y3h26dKzIjVWeveTaVZaf5q9XPF-VnOw";
 
 #define UART_FR_RXFF            0x00000040  // UART Receive FIFO Full
 #define UART_FR_TXFF            0x00000020  // UART Transmit FIFO Full

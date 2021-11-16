@@ -5,6 +5,20 @@ uint32_t MotorSpeed;
 uint32_t P;
 uint32_t I;
 uint32_t E;
+uint32_t KP_1;
+uint32_t KP_2;
+
+uint32_t KI_1;
+uint32_t KI_2;
+
+//Duty Cycle Control Value
+uint32_t u;
+
+//PI error value
+uint32_t e;
+
+uint32_t rps;
+uint32_t MotorSpeed;
 
 
 // period is 16-bit number of PWM clock cycles in one period (3<=period)
@@ -48,18 +62,37 @@ void SetDuty(uint16_t duty) {
   PWM0_0_CMPB_R = duty - 1;             // 6) count value when output rises
 }
 
-void PILoop(void) {
+uint16_t PI_Equation(void){
+    uint32_t P;
+    uint32_t I = 0;
+
     MotorSpeed = rps/40;          // Set the Motor Speed
-    P  =  (Kp1 * E)/Kp2;          // Proportional term
+
+    P  =  (KP_1 * e)/KP_2;          // Proportional term
+
     if(P <  300) P = 300;         // Minimum PWM output = 300
-    if(P > 39900) P = 39900;       // Maximum PWM output = 39900
-    I  = I + (Ki1 * E)/Ki2;       // SUM(KiDt)
-    if(I <  300) I = 300;         // Minimum PWM output = 300
-    if(I > 39900) I = 39900;       // Maximum PWM output = 39900
-    U   = P + I;                  // Calculate the actuator value
-    if(U < 300)  U=300;           // Minimum PWM output
-    if(U > 39900) U=39900;         // 3000 to 39900
-    PWM0A_Duty(U);                // Send to PWM
+    if(P >39900) P = 39900;       // Maximum PWM output = 39900
+
+    I  = I + (KI_1 * e)/KI_2;       // SUM(KiDt)
+
+    if(I <  300) {
+        I = 300;         // Minimum PWM output = 300
+    }
+    if(I >39900){
+        I = 39900;       // Maximum PWM output = 39900
+    }
+
+    u   = P + I;                  // Calculate the actuator value
+
+    if(u < 300) {
+        u=300;           // Minimum PWM output
+    }
+    if(u >39900){
+        u=39900;         // 3000 to 39900
+    }
+
+    //SetDuty(U);                    //Send to PWM
+    //PWM0A_Duty(U);                // Send to PWM
+
+    return u;
 }
-
-

@@ -23,7 +23,7 @@ void CalculatePWM(void);
 
 void SetDuty(uint16_t duty);
 
-void PILoop(void);
+uint16_t PI_Equation(void);
 
 
 #endif /* MOTORDRIVER_H_ */
