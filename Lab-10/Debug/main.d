@@ -24,6 +24,7 @@ main.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/UA
 main.obj: ../SwitchDriver.h
 main.obj: /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/CortexM.h
 main.obj: ../ESPDriver.h
+main.obj: ../MotorDriver.h
 
 ../main.c:
 
@@ -72,4 +73,6 @@ main.obj: ../ESPDriver.h
 /Users/pulkitmahajan/Documents/WindowsFiles/EE445L-Lab10/Lab-10/inc/CortexM.h:
 
 ../ESPDriver.h:
+
+../MotorDriver.h:
 

@@ -8,7 +8,6 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-
 #include <stdio.h>
 #include <stdint.h>
 #include <limits.h>
@@ -28,6 +27,7 @@
 //#include "TimerDriver.h"
 #include "SwitchDriver.h"
 #include "ESPDriver.h"
+#include "MotorDriver.h"
 
 
 #endif /* MAIN_H_ */
