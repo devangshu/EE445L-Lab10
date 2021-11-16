@@ -7,12 +7,13 @@ int main(void) {
     DisableInterrupts();
 
     PF2 = 0;
-    DisplayInit();
+    //ST7735_InitR(INITR_REDTAB);
     //Audio_Init();
     //Timer_Init();
     //Switches_Init();
     InitTachDriver();
     InitMotor(40000, 600);
+    DisplayInit();
     ESP_Init();
 
     EnableInterrupts();

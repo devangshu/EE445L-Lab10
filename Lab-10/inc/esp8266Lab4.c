@@ -334,7 +334,7 @@ void ESP8266_Init(void){
   GPIO_PORTE_PCTL_R = (GPIO_PORTE_PCTL_R&0xFFFF0F00);
   GPIO_PORTE_AMSEL_R &= ~0x0B;    // disable analog functionality on PE3,1,0
   UART5_Init(2);                  // Enable ESP8266 Serial Port 
-  EnableInterrupts();
+  //EnableInterrupts();
 }
 // clone without enabling interrupts
 void ESP8266_Init_Safe(void){

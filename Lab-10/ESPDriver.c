@@ -77,6 +77,13 @@ void Blynk_to_TM4C_READ(void){
     UART_OutString(Pin_Float);
     UART_OutString("\n\r");
 #endif
+#ifdef DEBUG3
+    Output_Color(ST7735_YELLOW);
+    ST7735_OutUDec(pin_num);
+    ST7735_OutString("=");
+    ST7735_OutUDec(pin_int);
+    ST7735_OutString("\n");
+#endif
   }  
   if(pin_num == 0x05) {
       //Desired Motor Speed

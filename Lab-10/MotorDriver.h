@@ -13,6 +13,7 @@
 #include "inc/tm4c123gh6pm.h"
 #include "inc/Timer1A.h"
 #include "UARTLab4.h"
+#include "DisplayDriver.h"
 
 void InitMotor(uint16_t period, uint16_t duty);
 

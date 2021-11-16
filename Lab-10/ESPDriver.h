@@ -9,11 +9,12 @@
 #include "UARTLab4.h"
 #include "esp8266Lab4.h"
 #include "tm4c123gh6pm.h"
+#include "ST7735.h"
 
 #include "Timer2.h"
 #include "Timer3.h"
 
-#define DEBUG1
+//#define DEBUG1
 
 void ESP_Init(void);
 

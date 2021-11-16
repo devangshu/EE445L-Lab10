@@ -100,6 +100,7 @@ void PI_Loop(void) {
         UART_OutChar('\r');
         UART_OutChar('\n');
     }
+    //PlotCustomGraph();
 
 
 }

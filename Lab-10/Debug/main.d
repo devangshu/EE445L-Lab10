@@ -35,8 +35,9 @@ main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/La
 main.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/Timer3.h
 main.obj: ../MotorDriver.h
 main.obj: ../inc/Timer1A.h
-main.obj: ../TachDriver.h
 main.obj: ../DisplayDriver.h
+main.obj: ../MotorDriver.h
+main.obj: ../TachDriver.h
 
 ../main.c:
 
@@ -108,7 +109,9 @@ main.obj: ../DisplayDriver.h
 
 ../inc/Timer1A.h:
 
-../TachDriver.h:
-
 ../DisplayDriver.h:
+
+../MotorDriver.h:
+
+../TachDriver.h:
 
