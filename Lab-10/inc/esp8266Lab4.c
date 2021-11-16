@@ -28,10 +28,10 @@
 #include "ST7735.h"
 #include "esp8266Lab4.h"
 // the following two lines connect you to the internet
-char    ssid[32]        = "21 Resident";
-char    pass[32]        = "Hookem*2101";
+char    ssid[32]        = "utexas-iot";
+char    pass[32]        = "0335803293960677";
 // create your own Blynk server app and edit this next line with your authentication code
-char    auth[64]        = "y3h26dKzIjVWeveTaVZaf5q9XPF-VnOw";
+char    auth[64]        = "c_V0V3AQsK8SVevsK1AUqHasnxJ_jdy5";
 
 #define UART_FR_RXFF            0x00000040  // UART Receive FIFO Full
 #define UART_FR_TXFF            0x00000020  // UART Transmit FIFO Full

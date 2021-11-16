@@ -11,7 +11,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "inc/tm4c123gh6pm.h"
-#include "inc/Timer2.h"
+#include "inc/Timer1A.h"
+#include "UARTLab4.h"
 
 void InitMotor(uint16_t period, uint16_t duty);
 
@@ -23,7 +24,7 @@ void CalculatePWM(void);
 
 void SetDuty(uint16_t duty);
 
-uint16_t PI_Equation(void);
+void PI_Loop(void);
 
 
 #endif /* MOTORDRIVER_H_ */

@@ -9,6 +9,7 @@ C_SRCS += \
 ../inc/LaunchPad.c \
 ../inc/PLL.c \
 ../inc/PWM.c \
+../inc/Timer1A.c \
 ../inc/Timer2.c \
 ../inc/Timer3.c \
 ../inc/UARTLab4.c \
@@ -21,6 +22,7 @@ C_DEPS += \
 ./inc/LaunchPad.d \
 ./inc/PLL.d \
 ./inc/PWM.d \
+./inc/Timer1A.d \
 ./inc/Timer2.d \
 ./inc/Timer3.d \
 ./inc/UARTLab4.d \
@@ -33,6 +35,7 @@ OBJS += \
 ./inc/LaunchPad.obj \
 ./inc/PLL.obj \
 ./inc/PWM.obj \
+./inc/Timer1A.obj \
 ./inc/Timer2.obj \
 ./inc/Timer3.obj \
 ./inc/UARTLab4.obj \
@@ -45,6 +48,7 @@ OBJS__QUOTED += \
 "inc/LaunchPad.obj" \
 "inc/PLL.obj" \
 "inc/PWM.obj" \
+"inc/Timer1A.obj" \
 "inc/Timer2.obj" \
 "inc/Timer3.obj" \
 "inc/UARTLab4.obj" \
@@ -57,6 +61,7 @@ C_DEPS__QUOTED += \
 "inc/LaunchPad.d" \
 "inc/PLL.d" \
 "inc/PWM.d" \
+"inc/Timer1A.d" \
 "inc/Timer2.d" \
 "inc/Timer3.d" \
 "inc/UARTLab4.d" \
@@ -69,6 +74,7 @@ C_SRCS__QUOTED += \
 "../inc/LaunchPad.c" \
 "../inc/PLL.c" \
 "../inc/PWM.c" \
+"../inc/Timer1A.c" \
 "../inc/Timer2.c" \
 "../inc/Timer3.c" \
 "../inc/UARTLab4.c" \

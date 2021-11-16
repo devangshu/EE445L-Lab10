@@ -1,24 +1,16 @@
 #include "MotorDriver.h"
 
-
-uint32_t MotorSpeed;
-uint32_t P;
-uint32_t I;
-uint32_t E;
-uint32_t KP_1;
-uint32_t KP_2;
-
-uint32_t KI_1;
-uint32_t KI_2;
-
-//Duty Cycle Control Value
-uint32_t u;
-
-//PI error value
-uint32_t e;
-
-uint32_t rps;
-uint32_t MotorSpeed;
+extern volatile int32_t RPS_Measured;
+volatile int32_t RPS_Desired;
+volatile int32_t MotorSpeed;
+volatile int32_t P;
+volatile int32_t I;
+volatile int32_t E;
+volatile int32_t KP_1;
+volatile int32_t KP_2;
+volatile int32_t KI_1;
+volatile int32_t KI_2;
+volatile int32_t U;
 
 
 // period is 16-bit number of PWM clock cycles in one period (3<=period)
@@ -32,7 +24,14 @@ void InitMotor(uint16_t period, uint16_t duty) {
   P = 0;
   I = 0;
   E = 0;
+  KP_1 = 75;
+  KP_2 = 200;
+  KI_1 = 75;
+  KI_2 = 200;
+  U = 0;
   MotorSpeed = 0;
+  RPS_Desired = 0;
+
   volatile unsigned long delay;
   SYSCTL_RCGCPWM_R |= 0x01;             // 1) activate PWM0
   SYSCTL_RCGCGPIO_R |= 0x02;            // 2) activate port B
@@ -54,7 +53,7 @@ void InitMotor(uint16_t period, uint16_t duty) {
   PWM0_0_CTL_R |= 0x00000001;           // 7) start PWM0
   PWM0_ENABLE_R |= 0x00000002;          // enable PB7/M0PWM1
 
-  Timer2_Init(PILoop, period * 2);
+  Timer1A_Init(PI_Loop, period * 2, 2);
 }
 // change duty cycle of PB7
 // duty is number of PWM clock cycles output is high  (2<=duty<=period-1)
@@ -62,37 +61,45 @@ void SetDuty(uint16_t duty) {
   PWM0_0_CMPB_R = duty - 1;             // 6) count value when output rises
 }
 
-uint16_t PI_Equation(void){
-    uint32_t P;
-    uint32_t I = 0;
+int32_t U_old2 = 0;
 
-    MotorSpeed = rps/40;          // Set the Motor Speed
+void PI_Loop(void) {
+    E = RPS_Desired - (RPS_Measured);
+    MotorSpeed = RPS_Desired / 40;          // Set the Motor Speed
 
-    P  =  (KP_1 * e)/KP_2;          // Proportional term
+    P  =  (KP_1 * E) / KP_2;          // Proportional term
 
-    if(P <  300) P = 300;         // Minimum PWM output = 300
-    if(P >39900) P = 39900;       // Maximum PWM output = 39900
+    if (P <  300)
+        P = 300;         // Minimum PWM output = 300
+    if (P > 39900)
+        P = 39900;       // Maximum PWM output = 39900
 
-    I  = I + (KI_1 * e)/KI_2;       // SUM(KiDt)
+    I  = I + (KI_1 * E) / KI_2;       // SUM(KiDt)
 
-    if(I <  300) {
+    if (I <  300) {
         I = 300;         // Minimum PWM output = 300
     }
-    if(I >39900){
+    if (I > 39900) {
         I = 39900;       // Maximum PWM output = 39900
     }
 
-    u   = P + I;                  // Calculate the actuator value
+    U = P + I;                  // Calculate the actuator value
 
-    if(u < 300) {
-        u=300;           // Minimum PWM output
+    if (U < 300) {
+        U = 300;           // Minimum PWM output
     }
-    if(u >39900){
-        u=39900;         // 3000 to 39900
+    if (U > 39900) {
+        U = 39900;         // 3000 to 39900
     }
 
-    //SetDuty(U);                    //Send to PWM
-    //PWM0A_Duty(U);                // Send to PWM
+    if (U_old2 != U) {
+        SetDuty(U);                    //Send to PWM
+        U_old2 = U;
+        UART_OutString("U=");
+        UART_OutUDec(U);
+        UART_OutChar('\r');
+        UART_OutChar('\n');
+    }
 
-    return u;
+
 }

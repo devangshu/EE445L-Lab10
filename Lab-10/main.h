@@ -20,7 +20,7 @@
 
 #include "inc/PLL.h"
 #include "../inc/ST7735.h"
-#include "../inc/UART0int.h"
+//#include "../inc/UART0int.h"
 
 //#include "LCDDriver.h"
 //#include "AudioDriver.h"

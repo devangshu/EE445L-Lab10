@@ -2,16 +2,6 @@
 
 #include "ESPDriver.h"
 
-
-#include <stdio.h>
-#include <stdint.h>
-#include "../inc/ADCSWTrigger.h"
-#include "UARTLab4.h"
-#include "esp8266Lab4.h"
-#include "tm4c123gh6pm.h"
-
-
-
 /* constants */
 
 #define PF2       (*((volatile uint32_t *)0x40025010))
@@ -19,17 +9,6 @@
 
 /* module fields */
 
-
-extern uint8_t oldHour;
-extern uint8_t oldMinute;
-
-volatile uint8_t vp2val = 0;
-volatile uint8_t vp3val = 0;
-volatile uint8_t vp4val = 0;
-volatile uint8_t vp5val = 0;
-volatile uint8_t vp6val = 0;
-volatile uint8_t vp7val = 0;
-volatile uint32_t vp74val = 0;    // VP74
 // These 6 variables contain the most recent Blynk to TM4C123 message
 // Blynk to TM4C123 uses VP0 to VP15
 char serial_buf[64];
@@ -39,19 +18,18 @@ char Pin_Float[8]    = "0.0000";   //
 uint32_t pin_num; 
 uint32_t pin_int;
 
-extern uint32_t KP_1, KP_2, KI_1, KI_2, u, e, rps, MotorSpeed;
+extern uint32_t KP_1, KP_2, KI_1, KI_2, U, RPS_Desired, RPS_Measured, MotorSpeed;
+extern int32_t E;
 
 
 /* module internal functions */
-
-
  
 // ----------------------------------- TM4C_to_Blynk ------------------------------
 // Send data to the Blynk App
 // It uses Virtual Pin numbers between 70 and 99
 // so that the ESP8266 knows to forward the data to the Blynk App
 void TM4C_to_Blynk(uint32_t pin,uint32_t value){
-  if((pin < 70)||(pin > 99 && pin != 555)){
+  if((pin < 70)||(pin > 99)){
     return; // ignore illegal requests
   }
 // your account will be temporarily halted 
@@ -65,6 +43,7 @@ void TM4C_to_Blynk(uint32_t pin,uint32_t value){
  
 
 void Blynk_to_TM4C_READ(void){
+    int z = 0;
     int j; char data;
 
 // Check to see if a there is data in the RXD buffer
@@ -87,56 +66,8 @@ void Blynk_to_TM4C_READ(void){
     strcpy(Pin_Float, strtok(NULL, ","));         // Not used
     pin_num = atoi(Pin_Number);     // Need to convert ASCII to integer
     pin_int = atoi(Pin_Integer);  
-  // ---------------------------- VP #1 ----------------------------------------
-  // This VP is the LED select button
-    /*
-    if(pin_num == 0x01)  {  
-      //LED = pin_int;
-      //PortF_Output(LED<<2); // Blue LED
-			
-			                          // Parse incoming data       
-			
-#ifdef DEBUG3
-      Output_Color(ST7735_CYAN);
-      ST7735_OutString("Rcv VP1 data=");
-      ST7735_OutUDec(LED);
-      ST7735_OutChar('\n');
-#endif
-    } else if (pin_num == 0x02) {
 
-		if (vp2val == 1 && pin_int == 0) {
-				Switches_Handler(5);
-				vp2val = 0;
-			}
-			if (pin_int == 1) vp2val = 1;
-    } else if (pin_num == 0x03) {
-			if (vp3val == 1 && pin_int == 0) {
-				Switches_Handler(4);
-				vp3val = 0;
-			}
-			if (pin_int == 1) vp3val = 1;
-    } else if (pin_num == 0x04) {
-			if (vp4val == 1 && pin_int == 0) {
-				Switches_Handler(3);
-				vp4val = 0;
-			}
-			if (pin_int == 1) vp4val = 1;
-		} else if (pin_num == 0x05) {
-			if (vp5val == 1 && pin_int == 0) {
-				Switches_Handler(2);
-				vp5val = 0;
-			}
-			if (pin_int == 1) vp5val = 1;
-		} else if (pin_num == 0x06) {
-			if (vp6val == 1 && pin_int == 0) {
-				Switches_Handler(1);
-				vp6val = 0;
-			}
-			if (pin_int == 1) vp6val = 1;
-		} else if (pin_num == 555 || (pin_num >= 550 && pin_num <= 560)) {
-			//DrawHands(pin_int + 1, atoi(Pin_Float));
-		}
-    */
+
 #ifdef DEBUG1
     UART_OutString(" Pin_Number = ");
     UART_OutString(Pin_Number);
@@ -147,30 +78,45 @@ void Blynk_to_TM4C_READ(void){
     UART_OutString("\n\r");
 #endif
   }  
-  if(pin_num == 0x08){
+  if(pin_num == 0x05) {
       //Desired Motor Speed
       MotorSpeed = pin_int; // need to do math to turn value from 0 - 1 into range of values
-  } else if(pin_num == 0x0A){
+      RPS_Desired = MotorSpeed;
+  } else if(pin_num == 0x06){
       //KP_1
       KP_1 = pin_int;
-  } else if(pin_num == 0x0C){
+  } else if(pin_num == 0x07){
       //KP_2
       KP_2 = pin_int;
-  } else if(pin_num == 0x0E){
+  } else if(pin_num == 0x08){
       //KI_1
       KI_1 = pin_int;
-  } else if(pin_num == 0x02){
+  } else if(pin_num == 0x09){
       //KI_2
       KI_2 = pin_int;
   }
 
 }
 
+
+int32_t RPS_Measured_old = 0;
+int32_t U_old = 0;
+int32_t E_old = 0;
+
 void Send_Information(void){
   //Send the 3 things to our Blynk console
-  TM4C_to_Blynk(70, rps);
-  TM4C_to_Blynk(71, u);
-  TM4C_to_Blynk(72, e);
+  if (RPS_Measured_old != RPS_Measured) {
+      RPS_Measured_old = RPS_Measured;
+      TM4C_to_Blynk(70, RPS_Measured);
+  }
+  if (U_old != U) {
+      U_old = U;
+      TM4C_to_Blynk(71, U);
+  }
+  if (E_old != E) {
+      E_old = E;
+      TM4C_to_Blynk(72, E);
+  }
 }
 
 
@@ -187,17 +133,11 @@ void ESP_Init(void) {
   ESP8266_SetupWiFi();  // Setup communications to Blynk Server  
   
 
-    //TODO: fix this
-    //Timer_InitTask2(&Blynk_to_TM4C_READ);
-	// check for receive data from Blynk App every 10ms
+  Timer2_Init(&Blynk_to_TM4C_READ, 800000);
+  // check for receive data from Blynk App every 10ms
 	
 
-    //TODO: fix this
-	//Timer_InitTask3(&Send_Information);
-	// Send data back to Blynk App every 1/2 second
-	esp_ready = 1;
-}
-
-void ESP_Request_Time(void) {
-	if (esp_ready) TM4C_to_Blynk(555, 1);
+  Timer3_Init(&Send_Information, 40000000);
+  // Send data back to Blynk App every 1/2 second
+  esp_ready = 1;
 }

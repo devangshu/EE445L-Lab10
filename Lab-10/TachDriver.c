@@ -2,14 +2,14 @@
 
 #define EightyMHzCycles 80000000
 
-uint32_t RPS;
+volatile int32_t RPS_Measured;
 uint32_t Period;                       // 24-bit, 12.5 ns units
 uint32_t static First;                 // Timer0A first edge, 12.5 ns units
 int32_t Done;                          // mailbox status set each rising
 void PeriodMeasure_Init(void) {
   SYSCTL_RCGCTIMER_R |= 0x01;          // activate timer0
   SYSCTL_RCGCGPIO_R |= 0x02;           // activate port B
-  RPS = 0;
+  RPS_Measured = 0;
   Period = 0;
   First = 0;                           // first will be wrong
   Done = 0;                            // set on subsequent
@@ -39,7 +39,7 @@ void Timer0A_Handler(void) {
   TIMER0_ICR_R = 0x00000004;       // acknowledge timer0A
   Period = (First - TIMER0_TAR_R)  // NOTE: underflow tolerant calculation
           & 0x00FFFFFF;
-  RPS = (EightyMHzCycles) / (Period * 12);
+  RPS_Measured = (EightyMHzCycles) / (Period * 12); // divide by 12
 
   First = TIMER0_TAR_R;            // setup for next measurement
   Done = 1;                        // set semaphore
