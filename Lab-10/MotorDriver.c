@@ -1,6 +1,12 @@
 #include "MotorDriver.h"
 
 
+uint32_t MotorSpeed;
+uint32_t P;
+uint32_t I;
+uint32_t E;
+
+
 // period is 16-bit number of PWM clock cycles in one period (3<=period)
 // period for PB6 and PB7 must be the same
 // duty is number of PWM clock cycles output is high  (2<=duty<=period-1)
@@ -8,7 +14,11 @@
 //                = BusClock/2
 //                = 80 MHz/2 = 40 MHz (in this example)
 // Output on PB7/M0PWM1
-void InitMotor(uint16_t period, uint16_t duty){
+void InitMotor(uint16_t period, uint16_t duty) {
+  P = 0;
+  I = 0;
+  E = 0;
+  MotorSpeed = 0;
   volatile unsigned long delay;
   SYSCTL_RCGCPWM_R |= 0x01;             // 1) activate PWM0
   SYSCTL_RCGCGPIO_R |= 0x02;            // 2) activate port B
@@ -29,9 +39,27 @@ void InitMotor(uint16_t period, uint16_t duty){
   PWM0_0_CMPB_R = duty - 1;             // 6) count value when output rises
   PWM0_0_CTL_R |= 0x00000001;           // 7) start PWM0
   PWM0_ENABLE_R |= 0x00000002;          // enable PB7/M0PWM1
+
+  Timer2_Init(PILoop, period * 2);
 }
 // change duty cycle of PB7
 // duty is number of PWM clock cycles output is high  (2<=duty<=period-1)
-void SetDuty(uint16_t duty){
+void SetDuty(uint16_t duty) {
   PWM0_0_CMPB_R = duty - 1;             // 6) count value when output rises
 }
+
+void PILoop(void) {
+    MotorSpeed = rps/40;          // Set the Motor Speed
+    P  =  (Kp1 * E)/Kp2;          // Proportional term
+    if(P <  300) P = 300;         // Minimum PWM output = 300
+    if(P > 39900) P = 39900;       // Maximum PWM output = 39900
+    I  = I + (Ki1 * E)/Ki2;       // SUM(KiDt)
+    if(I <  300) I = 300;         // Minimum PWM output = 300
+    if(I > 39900) I = 39900;       // Maximum PWM output = 39900
+    U   = P + I;                  // Calculate the actuator value
+    if(U < 300)  U=300;           // Minimum PWM output
+    if(U > 39900) U=39900;         // 3000 to 39900
+    PWM0A_Duty(U);                // Send to PWM
+}
+
+

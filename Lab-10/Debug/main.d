@@ -27,6 +27,7 @@ main.obj: ../SwitchDriver.h
 main.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/CortexM.h
 main.obj: ../ESPDriver.h
 main.obj: ../MotorDriver.h
+main.obj: ../inc/Timer2.h
 main.obj: ../TachDriver.h
 
 ../main.c:
@@ -82,6 +83,8 @@ main.obj: ../TachDriver.h
 ../ESPDriver.h:
 
 ../MotorDriver.h:
+
+../inc/Timer2.h:
 
 ../TachDriver.h:
 

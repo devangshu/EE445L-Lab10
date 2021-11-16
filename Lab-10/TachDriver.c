@@ -1,5 +1,7 @@
 #include "TachDriver.h"
 
+#define EightyMHzCycles 80000000
+
 uint32_t RPS;
 uint32_t Period;                       // 24-bit, 12.5 ns units
 uint32_t static First;                 // Timer0A first edge, 12.5 ns units
@@ -37,7 +39,7 @@ void Timer0A_Handler(void) {
   TIMER0_ICR_R = 0x00000004;       // acknowledge timer0A
   Period = (First - TIMER0_TAR_R)  // NOTE: underflow tolerant calculation
           & 0x00FFFFFF;
-  RPS = (80000000) / (Period * 12);
+  RPS = (EightyMHzCycles) / (Period * 12);
 
   First = TIMER0_TAR_R;            // setup for next measurement
   Done = 1;                        // set semaphore

@@ -9,6 +9,8 @@ C_SRCS += \
 ../inc/LaunchPad.c \
 ../inc/PLL.c \
 ../inc/PWM.c \
+../inc/Timer2.c \
+../inc/Timer3.c \
 ../inc/UARTLab4.c \
 ../inc/Unified_Port_Init.c \
 ../inc/esp8266Lab4.c 
@@ -19,6 +21,8 @@ C_DEPS += \
 ./inc/LaunchPad.d \
 ./inc/PLL.d \
 ./inc/PWM.d \
+./inc/Timer2.d \
+./inc/Timer3.d \
 ./inc/UARTLab4.d \
 ./inc/Unified_Port_Init.d \
 ./inc/esp8266Lab4.d 
@@ -29,6 +33,8 @@ OBJS += \
 ./inc/LaunchPad.obj \
 ./inc/PLL.obj \
 ./inc/PWM.obj \
+./inc/Timer2.obj \
+./inc/Timer3.obj \
 ./inc/UARTLab4.obj \
 ./inc/Unified_Port_Init.obj \
 ./inc/esp8266Lab4.obj 
@@ -39,6 +45,8 @@ OBJS__QUOTED += \
 "inc/LaunchPad.obj" \
 "inc/PLL.obj" \
 "inc/PWM.obj" \
+"inc/Timer2.obj" \
+"inc/Timer3.obj" \
 "inc/UARTLab4.obj" \
 "inc/Unified_Port_Init.obj" \
 "inc/esp8266Lab4.obj" 
@@ -49,6 +57,8 @@ C_DEPS__QUOTED += \
 "inc/LaunchPad.d" \
 "inc/PLL.d" \
 "inc/PWM.d" \
+"inc/Timer2.d" \
+"inc/Timer3.d" \
 "inc/UARTLab4.d" \
 "inc/Unified_Port_Init.d" \
 "inc/esp8266Lab4.d" 
@@ -59,6 +69,8 @@ C_SRCS__QUOTED += \
 "../inc/LaunchPad.c" \
 "../inc/PLL.c" \
 "../inc/PWM.c" \
+"../inc/Timer2.c" \
+"../inc/Timer3.c" \
 "../inc/UARTLab4.c" \
 "../inc/Unified_Port_Init.c" \
 "../inc/esp8266Lab4.c" 

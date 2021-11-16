@@ -13,7 +13,7 @@ int main(void) {
     //Switches_Init();
     //ESP_Init();
     InitTachDriver();
-    InitMotor(40000,20000);
+    InitMotor(40000, 20000);
     EnableInterrupts();
 
     while(1) {
