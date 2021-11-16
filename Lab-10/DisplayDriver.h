@@ -12,6 +12,8 @@
 #include "MotorDriver.h"
 #include "TachDriver.h"
 
+#define MAX_RPS 40000
+
 //This will just call ST7735_Init()
 void DisplayInit(void);
 

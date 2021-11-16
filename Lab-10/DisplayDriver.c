@@ -22,7 +22,8 @@ static void DrawHeading(void){
 
 void PlotCustomGraph(void){
     DrawHeading();
-    //TODO Normalize values of y_desired and y_measured
+    y_desired = (RPS_Desired * 100)/MAX_RPS;
+    y_measured = (RPS_Measured * 100)/MAX_RPS;
     ST7735_DrawPixel(x_coordinate, y_desired, ST7735_RED);
     ST7735_DrawPixel(x_coordinate, y_measured, ST7735_BLUE);
     x_coordinate = (x_coordinate + 1) & 0x0000007F; // keep the value between 1 and 127;
