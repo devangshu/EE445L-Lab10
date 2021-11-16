@@ -1,6 +1,7 @@
 #include "MotorDriver.h"
 
 extern volatile int32_t RPS_Measured;
+extern volatile uint8_t esp_ready;
 volatile int32_t RPS_Desired;
 volatile int32_t MotorSpeed;
 volatile int32_t P;
@@ -65,6 +66,8 @@ int32_t U_old2 = 0;
 
 void PI_Loop(void) {
     E = RPS_Desired - (RPS_Measured);
+
+    // what does this line do? --v
     MotorSpeed = RPS_Desired / 40;          // Set the Motor Speed
 
     P  =  (KP_1 * E) / KP_2;          // Proportional term
@@ -95,10 +98,14 @@ void PI_Loop(void) {
     if (U_old2 != U) {
         SetDuty(U);                    //Send to PWM
         U_old2 = U;
-        UART_OutString("U=");
-        UART_OutUDec(U);
-        UART_OutChar('\r');
-        UART_OutChar('\n');
+        if (esp_ready) {
+            /*
+            UART_OutString("U=");
+            UART_OutUDec(U);
+            UART_OutChar('\r');
+            UART_OutChar('\n');
+            */
+        }
     }
     //PlotCustomGraph();
 

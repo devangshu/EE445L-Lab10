@@ -7,12 +7,11 @@ int main(void) {
     DisableInterrupts();
 
     PF2 = 0;
-    //ST7735_InitR(INITR_REDTAB);
     //Audio_Init();
     //Timer_Init();
     //Switches_Init();
     InitTachDriver();
-    InitMotor(40000, 600);
+    InitMotor(40000, 39900);  // U_range{5000 : 39900} == DMS_range{10 : 50}
     DisplayInit();
     ESP_Init();
 

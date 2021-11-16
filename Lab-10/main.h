@@ -19,7 +19,7 @@
 //#include "../inc/TExaS.h"
 
 #include "inc/PLL.h"
-#include "../inc/ST7735.h"
+#include "../inc/ST7735Lab4.h"
 //#include "../inc/UART0int.h"
 
 //#include "LCDDriver.h"

@@ -11,7 +11,7 @@ inc/PWM.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/i
 inc/PWM.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h
 inc/PWM.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 inc/PWM.obj: /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
-inc/PWM.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h
+inc/PWM.obj: /Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h
 
 ../inc/PWM.c:
 
@@ -35,5 +35,5 @@ inc/PWM.obj: /Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10
 
 /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
-/Users/dev/Documents/UT/5.\ Fall2021/EE445L/Labs/Lab10/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h:
+/Users/anuv/Documents/School/EE445L/EE445L-Lab10/Lab-10/inc/tm4c123gh6pm.h:
 

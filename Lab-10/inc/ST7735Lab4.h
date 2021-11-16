@@ -70,9 +70,9 @@
 // CS   - PA3 TFT_CS, active low to enable TFT
 // *CS  - (NC) SDC_CS, active low to enable SDC
 // MISO - (NC) MISO SPI data from SDC to microcontroller
-// SDA  – (NC) I2C data for ADXL345 accelerometer
-// SCL  – (NC) I2C clock for ADXL345 accelerometer
-// SDO  – (NC) I2C alternate address for ADXL345 accelerometer
+// SDA  ï¿½ (NC) I2C data for ADXL345 accelerometer
+// SCL  ï¿½ (NC) I2C clock for ADXL345 accelerometer
+// SDO  ï¿½ (NC) I2C alternate address for ADXL345 accelerometer
 // Backlight + - Light, backlight connected to +3.3 V
 
 // **********wide.hk ST7735R with ADXL335 accelerometer *******************
@@ -86,9 +86,9 @@
 // CS   - PA3 TFT_CS, active low to enable TFT
 // *CS  - (NC) SDC_CS, active low to enable SDC
 // MISO - (NC) MISO SPI data from SDC to microcontroller
-// X– (NC) analog input X-axis from ADXL335 accelerometer
-// Y– (NC) analog input Y-axis from ADXL335 accelerometer
-// Z– (NC) analog input Z-axis from ADXL335 accelerometer
+// Xï¿½ (NC) analog input X-axis from ADXL335 accelerometer
+// Yï¿½ (NC) analog input Y-axis from ADXL335 accelerometer
+// Zï¿½ (NC) analog input Z-axis from ADXL335 accelerometer
 // Backlight + - Light, backlight connected to +3.3 V
 
 
@@ -111,7 +111,9 @@
 
 #ifndef _ST7735H_
 #define _ST7735H_
+
 #include <stdint.h>
+#include <stdio.h>
 // some flags for ST7735_InitR()
 enum initRFlags{
   none,
@@ -562,16 +564,18 @@ void ST7735_uBinOut6(uint32_t n);
           maxX   largest X data value allowed, resolution= 0.001
           minY   smallest Y data value allowed, resolution= 0.001
           maxY   largest Y data value allowed, resolution= 0.001
+					bcolor 16-bit color of the background
  Outputs: none
  assumes minX < maxX, and miny < maxY
 */
-void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY, uint16_t color);
+void ST7735_XYplotInit(char *title, int32_t minX, int32_t maxX, int32_t minY, int32_t maxY, uint16_t bcolor);
 
 /**************ST7735_XYplot***************
  Plot an array of (x,y) data
  Inputs:  num    number of data points in the two arrays
           bufX   array of 32-bit fixed-point data, resolution= 0.001
           bufY   array of 32-bit fixed-point data, resolution= 0.001
+					color  16-bit color of the data points
  Outputs: none
  assumes ST7735_XYplotInit has been previously called
  neglect any points outside the minX maxY minY maxY bounds
@@ -592,6 +596,23 @@ void ST7735_XYplot(uint32_t num, int32_t bufX[], int32_t bufY[], uint16_t color)
 // Output: none
 void ST7735_Line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, 
                  uint16_t color);
+
+// TAKEN FROM ST7735_PORTD.C
+//************* ST7735_Line********************************************
+//  Draws one line on the ST7735 color LCD
+//  Inputs: (x1,y1) is the start point
+//          (x2,y2) is the end point
+// x1,x2 are horizontal positions, columns from the left edge
+//               must be less than 128
+//               0 is on the left, 126 is near the right
+// y1,y2 are vertical positions, rows from the top edge
+//               must be less than 160
+//               159 is near the wires, 0 is the side opposite the wires
+//        color 16-bit color, which can be produced by ST7735_Color565() 
+// Output: none
+void ST7735_Line_PortD(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, 
+                 uint16_t color);
+
 
 // *************** ST7735_SetX ********************
 // Used in all the plots to change the X coordinate to new location

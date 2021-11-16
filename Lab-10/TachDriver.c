@@ -40,6 +40,8 @@ void Timer0A_Handler(void) {
   Period = (First - TIMER0_TAR_R)  // NOTE: underflow tolerant calculation
           & 0x00FFFFFF;
   RPS_Measured = (EightyMHzCycles) / (Period * 12); // divide by 12
+  RPS_Measured = (RPS_Measured * 60) / 120;
+
 
   First = TIMER0_TAR_R;            // setup for next measurement
   Done = 1;                        // set semaphore

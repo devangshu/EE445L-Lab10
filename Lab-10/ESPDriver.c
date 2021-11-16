@@ -106,9 +106,9 @@ void Blynk_to_TM4C_READ(void){
 }
 
 
-int32_t RPS_Measured_old = 0;
-int32_t U_old = 0;
-int32_t E_old = 0;
+volatile int32_t RPS_Measured_old = 0;
+volatile int32_t U_old = 0;
+volatile int32_t E_old = 0;
 
 void Send_Information(void){
   //Send the 3 things to our Blynk console
@@ -128,7 +128,7 @@ void Send_Information(void){
 
 
 /* module external methods */
-uint8_t esp_ready = 0;
+volatile uint8_t esp_ready = 0;
 void ESP_Init(void) {
 	
 #ifdef DEBUG1

@@ -8,11 +8,12 @@
 #ifndef DISPLAYDRIVER_H_
 #define DISPLAYDRIVER_H_
 
-#include "ST7735.h"
+#include "ST7735Lab4.h"
 #include "MotorDriver.h"
 #include "TachDriver.h"
+#include "Timer4A.h"
 
-#define MAX_RPS 40000
+#define MAX_RPS 100
 
 //This will just call ST7735_Init()
 void DisplayInit(void);

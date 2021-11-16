@@ -42,8 +42,10 @@
 
 
 #define BLYNK_TEMPLATE_ID "TMPL1FqI-jRD"
-#define BLYNK_DEVICE_NAME "Lab10Test"
+#define BLYNK_DEVICE_NAME "Lab10"
 #define BLYNK_AUTH_TOKEN "c_V0V3AQsK8SVevsK1AUqHasnxJ_jdy5"
+
+
 
 // ----------------------------------------------------------------------------
 // DEFINEs section
