@@ -14,7 +14,7 @@
 
 void InitMotor(uint16_t period, uint16_t duty);
 
-void InitMotorTimer(long period );
+void InitMotorTimer(long period);
 
 void MotorTimerHandler(void);
 
