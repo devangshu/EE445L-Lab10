@@ -5,10 +5,11 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "../inc/ADCSWTrigger.h"
 #include "UARTLab4.h"
 #include "esp8266Lab4.h"
 #include "tm4c123gh6pm.h"
-#include "ADCSWTrigger.h"
+
 
 
 /* constants */
@@ -61,7 +62,8 @@ void TM4C_to_Blynk(uint32_t pin,uint32_t value){
 }
  
 
-void Blynk_to_TM4C_READ(void){int j; char data;
+void Blynk_to_TM4C_READ(void){
+    int j; char data;
 
 // Check to see if a there is data in the RXD buffer
   if(ESP8266_GetMessage(serial_buf)){  // returns false if no message
@@ -168,7 +170,7 @@ void ESP_Init(void) {
 	
 #ifdef DEBUG1
   UART_Init(5);         // Enable Debug Serial Port
-  UART_OutString("\n\rEE445L Lab 4D\n\r");
+  UART_OutString("\n\rEE445L Lab 10\n\r");
 #endif
   ESP8266_Init();       // Enable ESP8266 Serial Port
   ESP8266_Reset();      // Reset the WiFi module
