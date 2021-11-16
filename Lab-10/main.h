@@ -9,6 +9,7 @@
 #define MAIN_H_
 
 #include "tm4c123gh6pm.h"
+#include "MotorDriver.h"
 
 
 #endif /* MAIN_H_ */

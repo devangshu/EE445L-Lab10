@@ -9,8 +9,10 @@
 #define MOTORDRIVER_H_
 
 #include <stdio.h>
+#include <stdint.h>
+#include "inc/tm4c123gh6pm.h"
 
-void InitMotor(void);
+void InitMotor(uint16_t period, uint16_t duty);
 
 void InitMotorTimer(long period );
 
@@ -18,8 +20,7 @@ void MotorTimerHandler(void);
 
 void CalculatePWM(void);
 
-void SetPWM(void);
-
+void SetDuty(uint16_t duty);
 
 
 #endif /* MOTORDRIVER_H_ */
