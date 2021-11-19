@@ -1,14 +1,8 @@
 #include "DisplayDriver.h"
 
-
+// x is time units (12.5 ns units), y is in revolutions per second as a fraction out of 160 (size of LCD)
 uint32_t x_coordinate, y_desired, y_measured;
-extern int32_t RPS_Desired, RPS_Measured;
-
-uint32_t currMinX = 0;
-uint32_t currMaxX = 2500;
-uint32_t currMinY = 0;
-uint32_t currMaxY = 2500;
-
+extern int32_t RPS_Desired, RPS_Measured; // revolutions per second
 
 
 
@@ -44,12 +38,9 @@ static void DrawHeading(void){
 
 void PlotCustomGraph(void){
     //DrawHeading();
-    y_desired = 159 - (RPS_Desired * 159)/MAX_RPS;
-    y_measured = 159 - ((RPS_Measured * 159)/MAX_RPS);
+    y_desired = 159 - (RPS_Desired * 159)/MAX_RPS; // Our Desired Revolutions Per second converted to screen location
+    y_measured = 159 - ((RPS_Measured * 159)/MAX_RPS); // Our Measured Revolutions Per second converted to screen location
 
-    int x = 127 * (x_coordinate - currMinX) / (currMaxX-currMinX);
-    int y1 = 32 + (127 * (currMaxY - RPS_Desired) / (currMaxY-currMinY));
-    int y2 = 32 + (127 * (currMaxY - RPS_Measured) / (currMaxY-currMinY));
 
     ST7735_DrawPixel(x_coordinate, y_desired, ST7735_RED);
     ST7735_DrawPixel(x_coordinate, y_measured, ST7735_BLUE);
@@ -61,7 +52,6 @@ void PlotCustomGraph(void){
        Output_Clear();
     }
 
-    //x_coordinate = (x_coordinate + 1) & 0x0000007F; // keep the value between 1 and 127;
 }
 
 

@@ -1,17 +1,18 @@
 #include "MotorDriver.h"
 
-extern volatile int32_t RPS_Measured;
+extern volatile int32_t RPS_Measured; // Revolutions per second
 extern volatile uint8_t esp_ready;
-volatile int32_t RPS_Desired;
-volatile int32_t MotorSpeed;
-volatile int32_t P;
-volatile int32_t I;
-volatile int32_t E;
-volatile int32_t KP_1;
-volatile int32_t KP_2;
-volatile int32_t KI_1;
-volatile int32_t KI_2;
-volatile int32_t U;
+volatile int32_t RPS_Desired; // Revolutions per second
+volatile int32_t MotorSpeed; // Not used, only for debugging
+//Needed variables
+volatile int32_t P; //Proportional term
+volatile int32_t I; // Integral term
+volatile int32_t E; // Revolutions per second
+volatile int32_t KP_1; //used for Proportional Ratio
+volatile int32_t KP_2; //used for Proportional Ratio
+volatile int32_t KI_1; //used for Integral Ratio
+volatile int32_t KI_2; //used for Integral Ratio
+volatile int32_t U; // PWM Duty Cycle (in clock ticks)
 
 
 // period is 16-bit number of PWM clock cycles in one period (3<=period)

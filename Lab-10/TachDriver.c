@@ -6,6 +6,7 @@ volatile int32_t RPS_Measured;
 uint32_t Period;                       // 24-bit, 12.5 ns units
 uint32_t static First;                 // Timer0A first edge, 12.5 ns units
 int32_t Done;                          // mailbox status set each rising
+
 void PeriodMeasure_Init(void) {
   SYSCTL_RCGCTIMER_R |= 0x01;          // activate timer0
   SYSCTL_RCGCGPIO_R |= 0x02;           // activate port B
