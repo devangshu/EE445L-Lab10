@@ -699,6 +699,28 @@ Metric Code Size 3216</description>
 <text x="-5.334" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-3.556" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="ST7735">
+<pad name="10" x="0" y="-22.86" drill="0.9"/>
+<pad name="9" x="0" y="-20.32" drill="0.9"/>
+<pad name="8" x="0" y="-17.78" drill="0.9"/>
+<pad name="7" x="0" y="-15.24" drill="0.9"/>
+<pad name="6" x="0" y="-12.7" drill="0.9"/>
+<pad name="5" x="0" y="-10.16" drill="0.9"/>
+<pad name="4" x="0" y="-7.62" drill="0.9"/>
+<pad name="3" x="0" y="-5.08" drill="0.9"/>
+<pad name="2" x="0" y="-2.54" drill="0.9"/>
+<pad name="1" x="0" y="0" drill="0.9" shape="square"/>
+<wire x1="-2.54" y1="-29.21" x2="-2.54" y2="6.35" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="6.35" x2="53.34" y2="6.35" width="0.127" layer="21"/>
+<wire x1="53.34" y1="6.35" x2="53.34" y2="-29.21" width="0.127" layer="21"/>
+<wire x1="53.34" y1="-29.21" x2="-2.54" y2="-29.21" width="0.127" layer="21"/>
+<wire x1="3.81" y1="3.81" x2="45.72" y2="3.81" width="0.127" layer="21"/>
+<wire x1="45.72" y1="3.81" x2="45.72" y2="-26.67" width="0.127" layer="21"/>
+<wire x1="45.72" y1="-26.67" x2="3.81" y2="-26.67" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-26.67" x2="3.81" y2="3.81" width="0.127" layer="21"/>
+<hole x="50.8" y="3.175" drill="2.1844"/>
+<hole x="50.8" y="-26.035" drill="2.1844"/>
+</package>
 </packages>
 <symbols>
 <symbol name="TRANSISTOR-FET_EMOS-ND">
@@ -916,6 +938,26 @@ Metric Code Size 3216</description>
 <pin name="OUT" x="7.62" y="0" visible="pad" length="short" direction="out" rot="R180"/>
 <pin name="-VS" x="2.54" y="-5.08" visible="pad" length="short" direction="in" rot="R90"/>
 <pin name="+VS" x="2.54" y="5.08" visible="pad" length="short" direction="in" rot="R270"/>
+</symbol>
+<symbol name="ST7735">
+<pin name="GND" x="-5.08" y="27.94" length="middle"/>
+<pin name="+3.3V" x="-5.08" y="25.4" length="middle"/>
+<pin name="RST" x="-5.08" y="22.86" length="middle"/>
+<pin name="D/C" x="-5.08" y="20.32" length="middle"/>
+<pin name="CARD_CS" x="-5.08" y="17.78" length="middle"/>
+<pin name="TFT_CS" x="-5.08" y="15.24" length="middle"/>
+<pin name="MOSI" x="-5.08" y="12.7" length="middle"/>
+<pin name="SCK" x="-5.08" y="10.16" length="middle"/>
+<pin name="MISO" x="-5.08" y="7.62" length="middle"/>
+<pin name="LIGHT" x="-5.08" y="5.08" length="middle"/>
+<wire x1="0" y1="0" x2="0" y2="33.02" width="0.254" layer="94"/>
+<wire x1="0" y1="33.02" x2="53.34" y2="33.02" width="0.254" layer="94"/>
+<wire x1="53.34" y1="33.02" x2="53.34" y2="0" width="0.254" layer="94"/>
+<wire x1="53.34" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="12.7" y1="27.94" x2="12.7" y2="5.08" width="0.254" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="50.8" y2="5.08" width="0.254" layer="94"/>
+<wire x1="50.8" y1="5.08" x2="50.8" y2="27.94" width="0.254" layer="94"/>
+<wire x1="50.8" y1="27.94" x2="12.7" y2="27.94" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -1256,6 +1298,30 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 </device>
 </devices>
 </deviceset>
+<deviceset name="ST7735">
+<gates>
+<gate name="G$1" symbol="ST7735" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="ST7735">
+<connects>
+<connect gate="G$1" pin="+3.3V" pad="2"/>
+<connect gate="G$1" pin="CARD_CS" pad="5"/>
+<connect gate="G$1" pin="D/C" pad="4"/>
+<connect gate="G$1" pin="GND" pad="1"/>
+<connect gate="G$1" pin="LIGHT" pad="10"/>
+<connect gate="G$1" pin="MISO" pad="9"/>
+<connect gate="G$1" pin="MOSI" pad="7"/>
+<connect gate="G$1" pin="RST" pad="3"/>
+<connect gate="G$1" pin="SCK" pad="8"/>
+<connect gate="G$1" pin="TFT_CS" pad="6"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="frames">
@@ -1336,24 +1402,28 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <part name="U$1" library="EE445L" deviceset="TM4C_BP" device=""/>
 <part name="D2" library="EE445L" deviceset="1N914" device="DO35-7"/>
 <part name="SUPPLY3" library="EE445L" deviceset="GND" device=""/>
-<part name="R3" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
-<part name="R4" library="EE445L" deviceset="RESISTOR" device="0204/7"/>
+<part name="R3" library="EE445L" deviceset="RESISTOR" device="0204/7" value="10k"/>
+<part name="R4" library="EE445L" deviceset="RESISTOR" device="0204/7" value="10k"/>
 <part name="SUPPLY4" library="EE445L" deviceset="GND" device=""/>
 <part name="IC1" library="EE445L" deviceset="OP350" device="N"/>
 <part name="SUPPLY5" library="EE445L" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="EE445L" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="EE445L" deviceset="GND" device=""/>
-<part name="R5" library="EE445L" deviceset="RESISTOR" device="0204/5"/>
-<part name="R6" library="EE445L" deviceset="RESISTOR" device="0204/5"/>
-<part name="R7" library="EE445L" deviceset="RESISTOR" device="0204/5"/>
-<part name="R8" library="EE445L" deviceset="RESISTOR" device="0204/5"/>
-<part name="C2" library="EE445L" deviceset="CAPACITOR" device="025-024X044"/>
+<part name="R5" library="EE445L" deviceset="RESISTOR" device="0204/5" value="10k"/>
+<part name="R6" library="EE445L" deviceset="RESISTOR" device="0204/5" value="10k"/>
+<part name="R7" library="EE445L" deviceset="RESISTOR" device="0204/5" value="10k"/>
+<part name="R8" library="EE445L" deviceset="RESISTOR" device="0204/5" value="200k"/>
+<part name="C2" library="EE445L" deviceset="CAPACITOR" device="025-024X044" value="0.1uf"/>
 <part name="+3V2" library="EE445L" deviceset="+3V3" device=""/>
+<part name="C3" library="EE445L" deviceset="CAPACITOR" device="025-024X044" value="0.33uf"/>
+<part name="U$2" library="EE445L" deviceset="ST7735" device=""/>
+<part name="+3V3" library="EE445L" deviceset="+3V3" device=""/>
+<part name="+3V4" library="EE445L" deviceset="+3V3" device=""/>
+<part name="SUPPLY8" library="EE445L" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="124.46" y="111.76" size="1.778" layer="91">Should be an RC Filter</text>
 </plain>
 <instances>
 <instance part="Q1" gate="G$1" x="157.48" y="111.76" smashed="yes">
@@ -1391,13 +1461,8 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <attribute name="SHEET" x="259.08" y="1.27" size="2.54" layer="94"/>
 <attribute name="DRAWING_NAME" x="190.5" y="19.05" size="2.54" layer="94"/>
 </instance>
-<instance part="U$1" gate="G$1" x="12.7" y="175.26" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="33.02" y="53.34" smashed="yes"/>
 <instance part="U$1" gate="G$2" x="86.36" y="119.38" smashed="yes"/>
-<instance part="U$1" gate="G$3" x="12.7" y="124.46" smashed="yes"/>
-<instance part="U$1" gate="G$4" x="12.7" y="96.52" smashed="yes"/>
-<instance part="U$1" gate="G$5" x="12.7" y="71.12" smashed="yes"/>
-<instance part="U$1" gate="G$6" x="12.7" y="48.26" smashed="yes"/>
-<instance part="U$1" gate="G$7" x="12.7" y="20.32" smashed="yes"/>
 <instance part="D2" gate="G$1" x="170.18" y="101.6" smashed="yes">
 <attribute name="NAME" x="172.72" y="102.0826" size="1.778" layer="95"/>
 <attribute name="VALUE" x="172.72" y="99.2886" size="1.778" layer="96"/>
@@ -1451,6 +1516,20 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 </instance>
 <instance part="+3V2" gate="G$1" x="205.74" y="154.94" smashed="yes">
 <attribute name="VALUE" x="203.2" y="149.86" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C3" gate="G$1" x="147.32" y="114.3" smashed="yes">
+<attribute name="NAME" x="148.336" y="114.935" size="1.778" layer="95"/>
+<attribute name="VALUE" x="148.336" y="110.109" size="1.778" layer="96"/>
+</instance>
+<instance part="U$2" gate="G$1" x="76.2" y="45.72" smashed="yes"/>
+<instance part="+3V3" gate="G$1" x="66.04" y="71.12" smashed="yes" rot="R90">
+<attribute name="VALUE" x="71.12" y="68.58" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="+3V4" gate="G$1" x="66.04" y="50.8" smashed="yes" rot="R90">
+<attribute name="VALUE" x="71.12" y="48.26" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SUPPLY8" gate="GND" x="66.04" y="76.2" smashed="yes" rot="R270">
+<attribute name="VALUE" x="61.341" y="80.645" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -1523,6 +1602,12 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <pinref part="SUPPLY7" gate="GND" pin="GND"/>
 <wire x1="162.56" y1="182.88" x2="162.56" y2="187.96" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="SUPPLY8" gate="GND" pin="GND"/>
+<pinref part="U$2" gate="G$1" pin="GND"/>
+<wire x1="68.58" y1="76.2" x2="71.12" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="76.2" x2="71.12" y2="73.66" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -1543,6 +1628,16 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <wire x1="162.56" y1="152.4" x2="162.56" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="+3V2" gate="G$1" pin="+3V3"/>
 <wire x1="198.12" y1="152.4" x2="205.74" y2="152.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="+3V3" gate="G$1" pin="+3V3"/>
+<pinref part="U$2" gate="G$1" pin="+3.3V"/>
+<wire x1="68.58" y1="71.12" x2="71.12" y2="71.12" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="LIGHT"/>
+<pinref part="+3V4" gate="G$1" pin="+3V3"/>
+<wire x1="71.12" y1="50.8" x2="68.58" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="M0_PWM0" class="0">
@@ -1576,9 +1671,8 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="119.38" x2="147.32" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="119.38" x2="147.32" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="G"/>
-<wire x1="147.32" y1="109.22" x2="152.4" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="C3" gate="G$1" pin="1"/>
+<wire x1="147.32" y1="119.38" x2="147.32" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -1645,6 +1739,68 @@ High-Speed 38MHz, Single-Supply,  slew rate 22V/us, 500uV offset, 4uV noise</des
 <wire x1="190.5" y1="170.18" x2="185.42" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="185.42" y1="170.18" x2="185.42" y2="182.88" width="0.1524" layer="91"/>
 <junction x="185.42" y="182.88"/>
+</segment>
+</net>
+<net name="N$3" class="0">
+<segment>
+<pinref part="Q1" gate="G$1" pin="G"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<junction x="147.32" y="109.22"/>
+<wire x1="147.32" y1="109.22" x2="152.4" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RST" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA7"/>
+<pinref part="U$2" gate="G$1" pin="RST"/>
+<wire x1="50.8" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
+<label x="55.88" y="68.58" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="D?C" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA6"/>
+<pinref part="U$2" gate="G$1" pin="D/C"/>
+<wire x1="50.8" y1="66.04" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
+<label x="55.88" y="66.04" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="MOSI" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA5"/>
+<wire x1="50.8" y1="63.5" x2="68.58" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="MOSI"/>
+<wire x1="68.58" y1="63.5" x2="68.58" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="58.42" x2="71.12" y2="58.42" width="0.1524" layer="91"/>
+<label x="55.88" y="63.5" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="MISO" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA4"/>
+<wire x1="50.8" y1="60.96" x2="63.5" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="MISO"/>
+<wire x1="63.5" y1="60.96" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="53.34" x2="71.12" y2="53.34" width="0.1524" layer="91"/>
+<label x="55.88" y="60.96" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CS" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA3"/>
+<wire x1="50.8" y1="58.42" x2="66.04" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="TFT_CS"/>
+<wire x1="66.04" y1="58.42" x2="66.04" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="60.96" x2="71.12" y2="60.96" width="0.1524" layer="91"/>
+<label x="55.88" y="58.42" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCK" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="PA2"/>
+<pinref part="U$2" gate="G$1" pin="SCK"/>
+<wire x1="50.8" y1="55.88" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
+<label x="55.88" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
