@@ -473,6 +473,28 @@ type 0204, grid 7.5 mm</description>
 <text x="-5.334" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 <text x="-3.556" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
+<package name="ST7735">
+<pad name="10" x="0" y="-22.86" drill="0.9"/>
+<pad name="9" x="0" y="-20.32" drill="0.9"/>
+<pad name="8" x="0" y="-17.78" drill="0.9"/>
+<pad name="7" x="0" y="-15.24" drill="0.9"/>
+<pad name="6" x="0" y="-12.7" drill="0.9"/>
+<pad name="5" x="0" y="-10.16" drill="0.9"/>
+<pad name="4" x="0" y="-7.62" drill="0.9"/>
+<pad name="3" x="0" y="-5.08" drill="0.9"/>
+<pad name="2" x="0" y="-2.54" drill="0.9"/>
+<pad name="1" x="0" y="0" drill="0.9" shape="square"/>
+<wire x1="-2.54" y1="-29.21" x2="-2.54" y2="6.35" width="0.127" layer="21"/>
+<wire x1="-2.54" y1="6.35" x2="53.34" y2="6.35" width="0.127" layer="21"/>
+<wire x1="53.34" y1="6.35" x2="53.34" y2="-29.21" width="0.127" layer="21"/>
+<wire x1="53.34" y1="-29.21" x2="-2.54" y2="-29.21" width="0.127" layer="21"/>
+<wire x1="3.81" y1="3.81" x2="45.72" y2="3.81" width="0.127" layer="21"/>
+<wire x1="45.72" y1="3.81" x2="45.72" y2="-26.67" width="0.127" layer="21"/>
+<wire x1="45.72" y1="-26.67" x2="3.81" y2="-26.67" width="0.127" layer="21"/>
+<wire x1="3.81" y1="-26.67" x2="3.81" y2="3.81" width="0.127" layer="21"/>
+<hole x="50.8" y="3.175" drill="2.1844"/>
+<hole x="50.8" y="-26.035" drill="2.1844"/>
+</package>
 </packages>
 </library>
 </libraries>
@@ -690,11 +712,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="-61.976" y="-2.54" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-61.976" y="-6.477" size="1.27" layer="27" ratio="10"/>
 </element>
-<element name="R3" library="EE445L" package="RES300MIL" value="" x="-59.69" y="-10.16" smashed="yes">
+<element name="R3" library="EE445L" package="RES300MIL" value="10k" x="-59.69" y="-10.16" smashed="yes">
 <attribute name="NAME" x="-62.23" y="-8.8646" size="0.9906" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-61.3156" y="-10.6426" size="0.9906" layer="27" ratio="10"/>
 </element>
-<element name="R4" library="EE445L" package="RES300MIL" value="" x="-59.69" y="-15.24" smashed="yes">
+<element name="R4" library="EE445L" package="RES300MIL" value="10k" x="-59.69" y="-15.24" smashed="yes">
 <attribute name="NAME" x="-62.23" y="-13.9446" size="0.9906" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-61.3156" y="-15.7226" size="0.9906" layer="27" ratio="10"/>
 </element>
@@ -706,26 +728,31 @@ design rules under a new name.</description>
 <attribute name="OC_NEWARK" value="15P0920" x="-57.15" y="-21.59" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-60.706" y="-22.225" size="1.27" layer="27" ratio="10"/>
 </element>
-<element name="R5" library="EE445L" package="RES200MIL" value="" x="-60.96" y="-29.21" smashed="yes">
+<element name="R5" library="EE445L" package="RES200MIL" value="10k" x="-60.96" y="-29.21" smashed="yes">
 <attribute name="NAME" x="-62.9666" y="-28.0416" size="0.9906" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-63.0936" y="-31.5214" size="0.9906" layer="27" ratio="10"/>
 </element>
-<element name="R6" library="EE445L" package="RES200MIL" value="" x="-60.96" y="-33.02" smashed="yes">
+<element name="R6" library="EE445L" package="RES200MIL" value="10k" x="-60.96" y="-33.02" smashed="yes">
 <attribute name="NAME" x="-62.9666" y="-31.8516" size="0.9906" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-63.0936" y="-35.3314" size="0.9906" layer="27" ratio="10"/>
 </element>
-<element name="R7" library="EE445L" package="RES200MIL" value="" x="-60.96" y="-36.83" smashed="yes">
+<element name="R7" library="EE445L" package="RES200MIL" value="10k" x="-60.96" y="-36.83" smashed="yes">
 <attribute name="NAME" x="-62.9666" y="-35.6616" size="0.9906" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-63.0936" y="-39.1414" size="0.9906" layer="27" ratio="10"/>
 </element>
-<element name="R8" library="EE445L" package="RES200MIL" value="" x="-60.96" y="-40.64" smashed="yes">
+<element name="R8" library="EE445L" package="RES200MIL" value="200k" x="-60.96" y="-40.64" smashed="yes">
 <attribute name="NAME" x="-62.9666" y="-39.4716" size="0.9906" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-63.0936" y="-42.9514" size="0.9906" layer="27" ratio="10"/>
 </element>
-<element name="C2" library="EE445L" package="CAP100MIL" value="" x="-62.23" y="-45.72" smashed="yes">
+<element name="C2" library="EE445L" package="CAP100MIL" value="0.1uf" x="-62.23" y="-45.72" smashed="yes">
 <attribute name="NAME" x="-64.008" y="-44.323" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="-64.008" y="-48.387" size="1.27" layer="27" ratio="10"/>
 </element>
+<element name="C3" library="EE445L" package="CAP100MIL" value="0.33uf" x="-62.23" y="-53.34" smashed="yes">
+<attribute name="NAME" x="-64.008" y="-51.943" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="-64.008" y="-56.007" size="1.27" layer="27" ratio="10"/>
+</element>
+<element name="U$2" library="EE445L" package="ST7735" value="ST7735" x="-62.23" y="-63.5" smashed="yes"/>
 </elements>
 <signals>
 <signal name="M2">
@@ -751,6 +778,8 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="7"/>
 <contactref element="C2" pad="1"/>
 <contactref element="R5" pad="2"/>
+<contactref element="U$2" pad="1"/>
+<wire x1="-63.5" y1="-45.72" x2="-62.23" y2="-63.5" width="0" layer="19" extent="1-1"/>
 <wire x1="-58.42" y1="-29.21" x2="-63.5" y2="-45.72" width="0" layer="19" extent="1-1"/>
 <wire x1="-58.42" y1="-17.78" x2="-58.42" y2="-29.21" width="0" layer="19" extent="1-1"/>
 <wire x1="-63.5" y1="-15.24" x2="-58.42" y2="-17.78" width="0" layer="19" extent="1-1"/>
@@ -763,6 +792,10 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="4"/>
 <contactref element="C2" pad="2"/>
 <contactref element="R6" pad="1"/>
+<contactref element="U$2" pad="2"/>
+<contactref element="U$2" pad="10"/>
+<wire x1="-62.23" y1="-66.04" x2="-62.23" y2="-86.36" width="0" layer="19" extent="1-1"/>
+<wire x1="-60.96" y1="-45.72" x2="-62.23" y2="-66.04" width="0" layer="19" extent="1-1"/>
 <wire x1="-63.5" y1="-33.02" x2="-60.96" y2="-45.72" width="0" layer="19" extent="1-1"/>
 <wire x1="-53.34" y1="-25.4" x2="-63.5" y2="-33.02" width="0" layer="19" extent="1-1"/>
 <wire x1="-22.86" y1="77.47" x2="-53.34" y2="-25.4" width="0" layer="19" extent="1-1"/>
@@ -781,8 +814,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$1">
 <contactref element="R1" pad="2"/>
-<contactref element="Q1" pad="P$3"/>
-<wire x1="-49.53" y1="71.12" x2="-16.51" y2="71.12" width="0" layer="19" extent="1-1"/>
+<contactref element="C3" pad="1"/>
+<wire x1="-49.53" y1="71.12" x2="-63.5" y2="-53.34" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5V">
 <contactref element="JP1" pad="1"/>
@@ -816,6 +849,41 @@ design rules under a new name.</description>
 <contactref element="IC1" pad="3"/>
 <wire x1="-63.5" y1="-36.83" x2="-63.5" y2="-40.64" width="0" layer="19" extent="1-1"/>
 <wire x1="-55.88" y1="-25.4" x2="-63.5" y2="-36.83" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$3">
+<contactref element="Q1" pad="P$3"/>
+<contactref element="C3" pad="2"/>
+<wire x1="-16.51" y1="71.12" x2="-60.96" y2="-53.34" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="RST">
+<contactref element="U$1" pad="J1-10"/>
+<contactref element="U$2" pad="3"/>
+<wire x1="-62.23" y1="13.97" x2="-62.23" y2="-68.58" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="D?C">
+<contactref element="U$1" pad="J1-9"/>
+<contactref element="U$2" pad="4"/>
+<wire x1="-62.23" y1="16.51" x2="-62.23" y2="-71.12" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="MOSI">
+<contactref element="U$1" pad="J1-8"/>
+<contactref element="U$2" pad="7"/>
+<wire x1="-62.23" y1="19.05" x2="-62.23" y2="-78.74" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="MISO">
+<contactref element="U$1" pad="J2-13"/>
+<contactref element="U$2" pad="9"/>
+<wire x1="-16.51" y1="19.05" x2="-62.23" y2="-83.82" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="CS">
+<contactref element="U$1" pad="J2-12"/>
+<contactref element="U$2" pad="6"/>
+<wire x1="-16.51" y1="16.51" x2="-62.23" y2="-76.2" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="SCK">
+<contactref element="U$1" pad="J2-11"/>
+<contactref element="U$2" pad="8"/>
+<wire x1="-16.51" y1="13.97" x2="-62.23" y2="-81.28" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
