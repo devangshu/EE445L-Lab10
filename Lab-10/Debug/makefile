@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-CG_TOOL_ROOT := /Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS
+CG_TOOL_ROOT := /Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -13,6 +13,7 @@ ORDERED_OBJS += \
 "./ESPDriver.obj" \
 "./MotorDriver.obj" \
 "./SwitchDriver.obj" \
+"./SysTick.obj" \
 "./TachDriver.obj" \
 "./main.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
@@ -160,22 +161,22 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 Lab-10.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"/Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Lab-10.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"/Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Lab-10_linkInfo.xml" --rom_model -o "Lab-10.out" $(ORDERED_OBJS)
+	"/Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Lab-10.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"/Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Lab-10_linkInfo.xml" --rom_model -o "Lab-10.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 Lab-10.hex: $(EXE_OUTPUTS)
 	@echo 'Building secondary target: "$@"'
 	@echo 'Invoking: Arm Hex Utility'
-	"/Applications/ti/ccs1100/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" --diag_wrap=off -o "Lab-10.hex" $(EXE_OUTPUTS__QUOTED)
+	"/Applications/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" --diag_wrap=off -o "Lab-10.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Controller.obj" "DisplayDriver.obj" "ESPDriver.obj" "MotorDriver.obj" "SwitchDriver.obj" "TachDriver.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" "inc/ADCSWTrigger.obj" "inc/CortexM.obj" "inc/LaunchPad.obj" "inc/PLL.obj" "inc/PWM.obj" "inc/ST7735Lab4.obj" "inc/Timer1A.obj" "inc/Timer2.obj" "inc/Timer3.obj" "inc/Timer4A.obj" "inc/UARTLab4.obj" "inc/Unified_Port_Init.obj" "inc/esp8266Lab4.obj" 
-	-$(RM) "Controller.d" "DisplayDriver.d" "ESPDriver.d" "MotorDriver.d" "SwitchDriver.d" "TachDriver.d" "main.d" "tm4c123gh6pm_startup_ccs.d" "inc/ADCSWTrigger.d" "inc/CortexM.d" "inc/LaunchPad.d" "inc/PLL.d" "inc/PWM.d" "inc/ST7735Lab4.d" "inc/Timer1A.d" "inc/Timer2.d" "inc/Timer3.d" "inc/Timer4A.d" "inc/UARTLab4.d" "inc/Unified_Port_Init.d" "inc/esp8266Lab4.d" 
+	-$(RM) "Controller.obj" "DisplayDriver.obj" "ESPDriver.obj" "MotorDriver.obj" "SwitchDriver.obj" "SysTick.obj" "TachDriver.obj" "main.obj" "tm4c123gh6pm_startup_ccs.obj" "inc/ADCSWTrigger.obj" "inc/CortexM.obj" "inc/LaunchPad.obj" "inc/PLL.obj" "inc/PWM.obj" "inc/ST7735Lab4.obj" "inc/Timer1A.obj" "inc/Timer2.obj" "inc/Timer3.obj" "inc/Timer4A.obj" "inc/UARTLab4.obj" "inc/Unified_Port_Init.obj" "inc/esp8266Lab4.obj" 
+	-$(RM) "Controller.d" "DisplayDriver.d" "ESPDriver.d" "MotorDriver.d" "SwitchDriver.d" "SysTick.d" "TachDriver.d" "main.d" "tm4c123gh6pm_startup_ccs.d" "inc/ADCSWTrigger.d" "inc/CortexM.d" "inc/LaunchPad.d" "inc/PLL.d" "inc/PWM.d" "inc/ST7735Lab4.d" "inc/Timer1A.d" "inc/Timer2.d" "inc/Timer3.d" "inc/Timer4A.d" "inc/UARTLab4.d" "inc/Unified_Port_Init.d" "inc/esp8266Lab4.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

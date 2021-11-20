@@ -66,6 +66,8 @@ void SetDuty(uint16_t duty) {
 int32_t U_old2 = 0;
 
 void PI_Loop(void) {
+    SysTick_Start();
+    uint32_t elapsed_cycles;
     E = RPS_Desired - (RPS_Measured);
 
     // what does this line do? --v
@@ -107,6 +109,8 @@ void PI_Loop(void) {
             UART_OutChar('\n');
             */
         }
+    elapsed_cycles = SysTick_Stop();
+    __nop; //set breakpoint here to check elapsed time
     }
     //PlotCustomGraph();
 

@@ -14,6 +14,7 @@
 #include "inc/Timer1A.h"
 #include "UARTLab4.h"
 #include "DisplayDriver.h"
+#include "SysTick.h"
 
 void InitMotor(uint16_t period, uint16_t duty);
 
