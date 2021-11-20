@@ -1,17 +1,17 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.5                   
 ******************************************************************************
->> Linked Fri Nov 19 19:20:14 2021
+>> Linked Fri Nov 19 19:22:05 2021
 
 OUTPUT FILE NAME:   <Lab-10.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00004199
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000419d
 
 
 MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  FLASH                 00000000   00040000  00004c24  0003b3dc  R  X
+  FLASH                 00000000   00040000  00004c28  0003b3d8  R  X
   SRAM                  20000000   00008000  0000078a  00007876  RW X
 
 
@@ -21,8 +21,8 @@ run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
 00000000    00000000    00004c28   00004c28    r-x
   00000000    00000000    0000026c   0000026c    r-- .intvecs
-  0000026c    0000026c    00003fe4   00003fe4    r-x .text
-  00004250    00004250    00000944   00000944    r-- .const
+  0000026c    0000026c    00003fe8   00003fe8    r-x .text
+  00004254    00004254    00000944   00000944    r-- .const
   00004b98    00004b98    00000090   00000090    r-- .cinit
 20000000    20000000    00000790   00000000    rw-
   20000000    20000000    000004ba   00000000    rw- .bss
@@ -38,7 +38,7 @@ section   page    origin      length       input sections
 .intvecs   0    00000000    0000026c     
                   00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
 
-.text      0    0000026c    00003fe4     
+.text      0    0000026c    00003fe8     
                   0000026c    00001ee0     ST7735Lab4.obj (.text)
                   0000214c    00000788     esp8266Lab4.obj (.text)
                   000028d4    00000602     UARTLab4.obj (.text)
@@ -62,30 +62,30 @@ section   page    origin      length       input sections
                   00003fba    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
                   00004022    0000005e                                   : i_divt2.asm.obj (.text)
                   00004080    0000004c                                   : atoi.c.obj (.text:atoi)
-                  000040cc    00000048     main.obj (.text)
-                  00004114    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  00004158    00000040                                   : strtok.c.obj (.text:strtok)
-                  00004198    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
-                  000041cc    0000002a                                   : strspn.c.obj (.text:strspn)
-                  000041f6    00000024                                   : strcspn.c.obj (.text:strcspn)
-                  0000421a    00000014                                   : strcpy.c.obj (.text:strcpy)
-                  0000422e    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  0000423c    0000000c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
-                  00004248    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
-                  0000424c    00000004                                   : exit.c.obj (.text:abort:abort)
+                  000040cc    0000004c     main.obj (.text)
+                  00004118    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  0000415c    00000040                                   : strtok.c.obj (.text:strtok)
+                  0000419c    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000041d0    0000002a                                   : strspn.c.obj (.text:strspn)
+                  000041fa    00000024                                   : strcspn.c.obj (.text:strcspn)
+                  0000421e    00000014                                   : strcpy.c.obj (.text:strcpy)
+                  00004232    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00004240    0000000c                                   : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  0000424c    00000004                                   : pre_init.c.obj (.text:_system_pre_init)
+                  00004250    00000004                                   : exit.c.obj (.text:abort:abort)
 
-.const     0    00004250    00000944     
-                  00004250    000004fb     ST7735Lab4.obj (.const:.string:Font)
-                  0000474b    00000200     ST7735Lab4.obj (.const:.string:dBfs)
-                  0000494b    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
-                  00004a4c    00000067     ST7735Lab4.obj (.const:.string:Bcmd)
-                  00004ab3    00000001     --HOLE-- [fill = 0]
-                  00004ab4    0000003c     ST7735Lab4.obj (.const:circle)
-                  00004af0    0000003b     ST7735Lab4.obj (.const:.string:Rcmd1)
-                  00004b2b    0000002b     ST7735Lab4.obj (.const:.string:Rcmd3)
-                  00004b56    00000024     ST7735Lab4.obj (.const:smallCircle)
-                  00004b7a    0000000d     ST7735Lab4.obj (.const:.string:Rcmd2green)
-                  00004b87    0000000d     ST7735Lab4.obj (.const:.string:Rcmd2red)
+.const     0    00004254    00000944     
+                  00004254    000004fb     ST7735Lab4.obj (.const:.string:Font)
+                  0000474f    00000200     ST7735Lab4.obj (.const:.string:dBfs)
+                  0000494f    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  00004a50    00000067     ST7735Lab4.obj (.const:.string:Bcmd)
+                  00004ab7    00000001     --HOLE-- [fill = 0]
+                  00004ab8    0000003c     ST7735Lab4.obj (.const:circle)
+                  00004af4    0000003b     ST7735Lab4.obj (.const:.string:Rcmd1)
+                  00004b2f    0000002b     ST7735Lab4.obj (.const:.string:Rcmd3)
+                  00004b5a    00000024     ST7735Lab4.obj (.const:smallCircle)
+                  00004b7e    0000000d     ST7735Lab4.obj (.const:.string:Rcmd2green)
+                  00004b8b    0000000d     ST7735Lab4.obj (.const:.string:Rcmd2red)
 
 .cinit     0    00004b98    00000090     
                   00004b98    0000006b     (.cinit..data.load) [load image, compression = lzss]
@@ -184,9 +184,9 @@ MODULE SUMMARY
        TachDriver.obj                 360     0         16     
        SysTick.obj                    228     0         4      
        DisplayDriver.obj              196     0         12     
-       main.obj                       72      0         0      
+       main.obj                       76      0         0      
     +--+------------------------------+-------+---------+---------+
-       Total:                         3002    620       201    
+       Total:                         3006    620       201    
                                                                
     ./inc/
        ST7735Lab4.obj                 7904    2114      72     
@@ -225,7 +225,7 @@ MODULE SUMMARY
        Stack:                         0       0         512    
        Linker Generated:              0       143       0      
     +--+------------------------------+-------+---------+---------+
-       Grand Total:                   16354   3134      1929   
+       Grand Total:                   16358   3134      1929   
 
 
 LINKER GENERATED COPY TABLES
@@ -256,7 +256,7 @@ address   name
 00003921  ADC1Seq2_Handler              
 00003923  ADC1Seq3_Handler              
 00002f0d  Blynk_to_TM4C_READ            
-0000424d  C$$EXIT                       
+00004251  C$$EXIT                       
 0000390b  CAN0_Handler                  
 0000390d  CAN1_Handler                  
 0000390f  CAN2_Handler                  
@@ -546,14 +546,14 @@ address   name
 00004c28  __TI_CINIT_Limit              
 00004c04  __TI_Handler_Table_Base       
 00004c10  __TI_Handler_Table_Limit      
-00004115  __TI_auto_init_nobinit_nopinit
+00004119  __TI_auto_init_nobinit_nopinit
 00003fbb  __TI_decompress_lzss          
-0000422f  __TI_decompress_none          
+00004233  __TI_decompress_none          
 ffffffff  __TI_pprof_out_hndl           
 ffffffff  __TI_prof_data_size           
 ffffffff  __TI_prof_data_start          
 00000000  __TI_static_base__            
-0000423d  __TI_zero_init                
+00004241  __TI_zero_init                
 00004023  __aeabi_idiv                  
 00002ed7  __aeabi_idiv0                 
 00004023  __aeabi_idivmod               
@@ -573,16 +573,16 @@ UNDEFED   __mpu_init
 200004c0  __stack                       
 20000000  __start___llvm_prf_cnts       
 20000000  __stop___llvm_prf_cnts        
-00004199  _c_int00_noargs               
-0000494b  _ctypes_                      
+0000419d  _c_int00_noargs               
+0000494f  _ctypes_                      
 UNDEFED   _system_post_cinit            
-00004249  _system_pre_init              
-0000424d  abort                         
+0000424d  _system_pre_init              
+00004251  abort                         
 00004081  atoi                          
 200006c0  auth                          
 ffffffff  binit                         
-00004ab4  circle                        
-0000474b  dBfs                          
+00004ab8  circle                        
+0000474f  dBfs                          
 20000770  esp_ready                     
 000019e9  ferror                        
 000019dd  fgetc                         
@@ -605,12 +605,12 @@ ffffffff  binit
 00001da9  plotLineX                     
 00001eb5  plotLineY                     
 200003c0  serial_buf                    
-00004b56  smallCircle                   
+00004b5a  smallCircle                   
 20000744  ssid                          
-0000421b  strcpy                        
-000041f7  strcspn                       
-000041cd  strspn                        
-00004159  strtok                        
+0000421f  strcpy                        
+000041fb  strcspn                       
+000041d1  strspn                        
+0000415d  strtok                        
 0000391b  uDMA_Error                    
 00003919  uDMA_Handler                  
 200004a8  x_coordinate                  
@@ -892,21 +892,21 @@ address   name
 00004023  __aeabi_idivmod               
 00004081  atoi                          
 000040cd  main                          
-00004115  __TI_auto_init_nobinit_nopinit
-00004159  strtok                        
-00004199  _c_int00_noargs               
-000041cd  strspn                        
-000041f7  strcspn                       
-0000421b  strcpy                        
-0000422f  __TI_decompress_none          
-0000423d  __TI_zero_init                
-00004249  _system_pre_init              
-0000424d  C$$EXIT                       
-0000424d  abort                         
-0000474b  dBfs                          
-0000494b  _ctypes_                      
-00004ab4  circle                        
-00004b56  smallCircle                   
+00004119  __TI_auto_init_nobinit_nopinit
+0000415d  strtok                        
+0000419d  _c_int00_noargs               
+000041d1  strspn                        
+000041fb  strcspn                       
+0000421f  strcpy                        
+00004233  __TI_decompress_none          
+00004241  __TI_zero_init                
+0000424d  _system_pre_init              
+00004251  C$$EXIT                       
+00004251  abort                         
+0000474f  dBfs                          
+0000494f  _ctypes_                      
+00004ab8  circle                        
+00004b5a  smallCircle                   
 00004c04  __TI_Handler_Table_Base       
 00004c10  __TI_Handler_Table_Limit      
 00004c18  __TI_CINIT_Base               

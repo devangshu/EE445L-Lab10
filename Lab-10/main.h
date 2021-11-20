@@ -17,6 +17,7 @@
 #include "../inc/LaunchPad.h"
 #include "inc/CortexM.h"
 //#include "../inc/TExaS.h"
+#include "SysTick.h"
 
 #include "inc/PLL.h"
 #include "../inc/ST7735Lab4.h"

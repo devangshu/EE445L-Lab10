@@ -14,6 +14,7 @@ int main(void) {
     InitMotor(40000, 39900);  // U_range{5000 : 39900} == DMS_range{10 : 50}
     DisplayInit();
     ESP_Init();
+    SysTick_Init();
 
     EnableInterrupts();
 

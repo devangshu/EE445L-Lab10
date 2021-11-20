@@ -20,6 +20,7 @@ main.obj: ../inc/tm4c123gh6pm.h
 main.obj: /Users/devm1/Desktop/Lab10/Lab-10/inc/LaunchPad.h
 main.obj: /Users/devm1/Desktop/Lab10/Lab-10/inc/Unified_Port_Init.h
 main.obj: ../inc/CortexM.h
+main.obj: ../SysTick.h
 main.obj: ../inc/PLL.h
 main.obj: /Users/devm1/Desktop/Lab10/Lab-10/inc/ST7735Lab4.h
 main.obj: ../SwitchDriver.h
@@ -80,6 +81,8 @@ main.obj: ../SysTick.h
 /Users/devm1/Desktop/Lab10/Lab-10/inc/Unified_Port_Init.h:
 
 ../inc/CortexM.h:
+
+../SysTick.h:
 
 ../inc/PLL.h:
 
